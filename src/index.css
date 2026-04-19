@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .card-notch {
+    clip-path: polygon(
+      0% 0%, 
+      100% 0%, 
+      100% calc(100% - 60px), 
+      calc(100% - 60px) calc(100% - 60px), 
+      calc(100% - 60px) 100%, 
+      0% 100%
+    );
+  }
+
+  /* Version with smooth curve for the notch */
+  .card-notch-curved {
+    /* Increased for zero overlap with 64px button */
+    mask-image: radial-gradient(circle at 100% 100%, transparent 80px, black 81px);
+    -webkit-mask-image: radial-gradient(circle at 100% 100%, transparent 80px, black 81px);
+  }
+}
+
+.text-accent-red {
+  color: #B12B2B;
+}

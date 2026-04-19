@@ -1,0 +1,183 @@
+GLOBAL COMPONENTS
+
+NAVBAR:
+
+Logo: 1st May
+Menu Items:
+Home
+About
+Portfolio
+Services
+1stMay
+Contact
+CTA Button: GET STARTED
+FOOTER (COMMON FOR ALL PAGES)
+
+SECTION: GET IN TOUCH
+
+Phone: +91 44 4859 4307 / +91 79045 23814
+Email: admin@1stmay.in
+Address:
+No. 165, 2nd Floor,
+Devi Kirupa Apartment,
+Baskar Colony, 1st Street,
+Saligramam, Chennai 600 093.
+
+SECTION: LINKS
+
+Style Guide
+Changelog
+License
+
+SECTION: SOCIAL
+
+Facebook
+LinkedIn
+Instagram
+
+BOTTOM BAR:
+
+© 2026 1st May. All rights reserved.
+
+
+
+
+Testimonial:
+"Working with this team transformed our brand visibility. Their creative campaigns and strategic execution helped us connect with our audience like never before."
+
+SECTION: HERO
+
+Heading: ABOUT US
+Subtext:
+At 1st MAY, we creatively strengthen your trades.
+
+SECTION: BUILT WITH TRUST, DRIVEN BY RESULTS
+
+Description:
+1st May Advertisement was established with a simple principle: trust and transparency in every step. That foundation helped us scale quickly while staying consistent in quality.
+
+Our core model is clear. We position brands, products, and services where target customers actually notice, remember, and respond. We aim to be an architect and trendsetter in advertising by delivering creative support with measurable business value.
+
+Quote:
+"We do exactly what we say we do"
+
+SECTION: OUR FUNDAMENTAL PROMISE
+
+Sharper brand communication
+Design and creation with precision
+Performance that exceeds projections
+High-impact output with commercial clarity
+
+SECTION: OUR STRONG SUIT
+
+Customized Campaigns
+Research-led Execution
+Budget Discipline
+
+SECTION: WHAT DOES ADVERTISING DO?
+
+Description:
+Advertising creates visibility, expands market awareness, widens reach, and ultimately supports higher sales.
+
+SECTION: OUR TEAM
+
+Cross-functional strength
+Integrity in our DNA
+Optimistic by design
+
+SECTION: WHY CHOOSE US
+
+Description:
+At 1st May, advertising is both commercial and emotional. We treat every client, logo, product, and service with care. Our campaigns improve visibility, goodwill, and business growth.
+
+Our commercials are crafted to be sharp, short, and memorable. Less is more, but reach is greater.
+
+SECTION: HERO
+
+Heading: SERVICES
+Subtext:
+Creative services built for attention, recall, and real results
+
+SECTION: WHAT WE CREATE FOR BRANDS
+
+Advertising Films
+Print Ads
+Corporate Films
+Music Videos
+Media Planning
+Digital Advertising
+Radio Ads
+Animations
+Outdoor Advertising
+
+SECTION: HERO
+
+Heading: PORTFOLIO
+Subtext:
+Crafted Dreams, Forged into Reality
+
+SECTION: CATEGORY FILTER
+
+Dropdown categories:
+Advertising Films
+Print Ads
+
+SECTION: PORTFOLIO ITEMS
+
+Video ads (YouTube embeds)
+Print ad designs
+
+SECTION: HERO
+
+Heading: FIRST MAY
+Subtext:
+The Launching Gateway
+
+SECTION: SUBSIDIARY INFO
+
+Heading:
+A Subsidiary Built to Extend the 1st May Advertising Engine
+Points:
+Operations
+Finance
+Delivery
+Focus
+
+SECTION: SERVICES THAT SHAPE THE FIRST MAY WING
+
+Media Planning
+Digital Advertising
+Radio Ads
+Print Ads
+Outdoor Advertising
+
+SECTION: BUILT FOR CLARITY
+
+Consistent control
+Channel fit
+Practical impact
+
+SECTION: HERO
+
+Heading: CONTACT
+Subtext:
+Crafting Unique Narratives to Elevate Your Brand
+
+SECTION: CONTACT CARDS
+
+Phone
+Email
+Location
+
+SECTION: FORM
+
+Fields:
+Name
+City
+Email
+Message
+Button: SUBMIT
+
+SECTION: MAP
+
+Embedded location map
