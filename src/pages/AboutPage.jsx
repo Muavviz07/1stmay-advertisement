@@ -28,10 +28,10 @@ const AboutPage = () => {
             <div className="relative z-10 max-w-4xl">
                <h2 className="text-[14px] text-gray-400 tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn tracking-wider">Our DNA</h2>
                <h1 className="about-hero-title text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary-dark leading-[0.9] tracking-tighter mb-[48px]">
-                  THE ARCHITECTURE <br /> OF <span className="text-secondary">IMPACTFUL</span> <br /> ADVERTISING.
+                  We Don't Just Create Ads. <br /> We Build <span className="text-secondary">Outcomes.</span>
                </h1>
                <p className="text-[18px] md:text-[22px] text-gray-500 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
-                  1st May Advertisement is built on the principle of strategic transparency, crafting campaigns where precision meets purpose to scale your brand effectively.
+                  Every decision we make, from concept to execution, is focused on delivering measurable business impact.
                </p>
             </div>
          </section>

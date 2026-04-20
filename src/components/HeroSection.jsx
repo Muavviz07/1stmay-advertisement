@@ -90,24 +90,18 @@ const HeroSection = () => {
         
         {/* Left Side Content */}
         <div className="w-full md:w-[65%]">
-          <h1 ref={headlineRef} className="text-[36px] md:text-[64px] lg:text-[76px] font-display font-bold text-white leading-[1.05] mb-[24px] tracking-tight drop-shadow-lg">
+          <h1 ref={headlineRef} className="text-[36px] md:text-[58px] lg:text-[68px] xl:text-[72px] font-display font-bold text-white leading-[1.08] mb-[24px] tracking-tight drop-shadow-lg">
             <span className="block overflow-hidden pb-[4px]">
-              <span className="headline-line block translate-y-[50px] opacity-0">DISCOVER</span>
+              <span className="headline-line block translate-y-[50px] opacity-0">ADVERTISING THAT</span>
             </span>
             <span className="block overflow-hidden pb-[4px]">
-              <span className="headline-line block translate-y-[50px] opacity-0">THE POWER OF</span>
-            </span>
-            <span className="block overflow-hidden pb-[8px]">
-              <span className="headline-line block translate-y-[50px] opacity-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#D199CF]">CREATIVE</span>
-            </span>
-            <span className="block overflow-hidden pb-[4px]">
-              <span className="headline-line block translate-y-[50px] opacity-0">ADVERTISING</span>
+              <span className="headline-line block translate-y-[50px] opacity-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#D199CF]">PAYS FOR ITSELF</span>
             </span>
           </h1>
           
           <div className="block overflow-hidden">
             <p className="headline-line translate-y-[30px] opacity-0 text-[16px] md:text-[20px] text-gray-300 font-medium font-sans mb-[48px] max-w-lg border-l-[3px] border-secondary pl-[20px] leading-[1.6]">
-              Crafted Dreams, Forged into Reality. A new benchmark in digital and visual storytelling.
+              We design high-impact campaigns that convert attention into real business results.
             </p>
           </div>
           
@@ -119,7 +113,7 @@ const HeroSection = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="hero-cta opacity-0 translate-y-[20px] bg-secondary text-white px-[32px] md:px-[48px] py-[14px] md:py-[18px] rounded-[8px] font-bold text-[13px] md:text-[15px] tracking-widest uppercase border border-transparent shadow-[0_8px_24px_rgba(76,175,80,0.2)]"
             >
-              Get Started
+              Get Free Consultation
             </motion.button>
             <motion.button 
               onClick={() => navigate('/portfolio')}
@@ -128,7 +122,7 @@ const HeroSection = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="hero-cta opacity-0 translate-y-[20px] bg-transparent border border-white/30 text-white px-[32px] md:px-[48px] py-[14px] md:py-[18px] rounded-[8px] font-bold text-[13px] md:text-[15px] tracking-widest uppercase"
             >
-              Explore Work
+              See Case Results
             </motion.button>
           </div>
         </div>

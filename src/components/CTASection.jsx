@@ -30,15 +30,15 @@ const CTASection = () => {
         className="max-w-[900px] w-full mx-auto px-6 relative z-20 text-center flex flex-col items-center"
       >
         <span className="text-[14px] font-bold tracking-[6px] text-gray-400 uppercase mb-[32px]">
-          Connect With Us
+          Lead-Generation Partner
         </span>
         
         <h2 className="text-[56px] md:text-[80px] lg:text-[96px] font-display font-medium text-white mb-[40px] leading-[1.05] tracking-tight">
-          Ready to leave <br/> your mark?
+          Ready to scale <br/> pipeline and sales?
         </h2>
         
         <p className="text-[20px] text-gray-400 mb-[64px] max-w-2xl leading-[1.6]">
-          At 1st May, we don't just execute campaigns; we architect realities that command attention and drive measurable growth.
+          We turn strategy and creative into measurable demand, so your team gets more qualified leads and stronger ROI from every campaign.
         </p>
         
         <motion.button 
@@ -47,7 +47,7 @@ const CTASection = () => {
           whileTap={{ scale: 0.95 }}
           className="bg-transparent border border-white/30 text-white px-[56px] py-[24px] rounded-full font-bold text-[16px] tracking-[2px] uppercase transition-colors duration-500 hover:border-white shadow-[0_0_40px_rgba(255,255,255,0)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center gap-4"
         >
-          Start A Project
+          Start Your Campaign
           <div className="w-[8px] h-[8px] rounded-full bg-secondary"></div>
         </motion.button>
       </motion.div>

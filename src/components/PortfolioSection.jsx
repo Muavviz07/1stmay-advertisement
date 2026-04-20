@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
 
 const portfolioItems = [
-  { id: '01', title: 'Summer Refresh', category: 'Advertising', metric: '10M+ Views', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', description: "A high-energy television and digital campaign targeting the modern youth demographic." },
-  { id: '02', title: 'Global Tech', category: 'Corporate', metric: 'Award Winning', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80', description: "Establishing a new visual vocabulary for a leading multinational SaaS ecosystem." },
-  { id: '03', title: 'Urban Lifestyle', category: 'Print & OOH', metric: 'Global Reach', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80', description: "Dominating cityscapes with raw, unedited photography for a premium street brand." },
-  { id: '04', title: 'Future Concepts', category: 'Animation', metric: 'Innovation', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', description: "Boundary-pushing 3D motion graphics explaining complex Web3 mechanics with ease." },
+  { id: '01', title: 'Summer Refresh', category: 'Advertising', metric: '32% Lower CPL', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', description: "A campaign refresh that improved early attention signals and reduced cost-per-lead across digital placements." },
+  { id: '02', title: 'Global Tech', category: 'Corporate', metric: '4.1x ROAS', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80', description: "Positioning and video system built to improve trust and help the sales team accelerate enterprise deal velocity." },
+  { id: '03', title: 'Urban Lifestyle', category: 'Print & OOH', metric: '27% More Footfall', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80', description: "A city-led rollout that connected message-to-location fit and drove measurable retail lift in key markets." },
+  { id: '04', title: 'Future Concepts', category: 'Animation', metric: '2.8x Demo Signups', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', description: "Explainer-led campaign flow that simplified a complex product and lifted conversion rates on landing pages." },
 ];
 
 const PortfolioModal = ({ item, onClose }) => {
@@ -85,9 +85,14 @@ const PortfolioSection = () => {
         {/* Foreground Interactive Links */}
         <div className="max-w-7xl w-full mx-auto px-6 md:px-16 relative z-10 py-[120px]">
           
-          <div className="flex items-center gap-[16px] mb-[80px]">
-             <div className="w-[40px] h-[2px] bg-secondary"></div>
-             <h2 className="text-[14px] text-white tracking-[4px] uppercase font-bold">Selected Work</h2>
+          <div className="mb-[80px]">
+             <div className="flex items-center gap-[16px] mb-4">
+               <div className="w-[40px] h-[2px] bg-secondary"></div>
+               <h2 className="text-[14px] text-white tracking-[4px] uppercase font-bold">Where Ideas Turn Into Results</h2>
+             </div>
+             <p className="text-[16px] md:text-[18px] text-white/80 max-w-2xl leading-[1.7]">
+               See how strategy, storytelling, and execution come together to create high-performing campaigns.
+             </p>
           </div>
 
           <div className="flex flex-col gap-0 border-t border-white/20">

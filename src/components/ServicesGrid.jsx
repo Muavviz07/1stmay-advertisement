@@ -3,16 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import MobileServicesCarousel from './MobileServicesCarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { id: '01', title: "Advertising Films", tag: "Visual Storytelling", img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80", description: "Cinematic, high-energy television and digital campaigns designed to capture immediate attention and drive intent." },
-  { id: '02', title: "Print Campaigns", tag: "Editorial Excellence", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80", description: "Striking printed collateral tailored for high-end magazines, expansive billboards, and physical landscapes." },
-  { id: '03', title: "Corporate Video", tag: "Brand Architecture", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80", description: "Bespoke company narratives crafted to secure B2B engagement and foster deep internal cultural strength." },
-  { id: '04', title: "Digital Reach", tag: "Algorithmic Growth", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80", description: "Precision-engineered ad placements across social and search ecosystems built purely for conversion." },
-  { id: '05', title: "Motion Graphics", tag: "Dynamic Narrative", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80", description: "Fluid, high-fidelity 2D/3D motion pieces that distill complex products into effortlessly consumable media." }
+  { id: '01', title: "Ads That Hook in 3 Seconds", tag: "Higher Watch-Through", img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80", description: "Short-form and film campaigns engineered to stop scrolls fast and move high-intent audiences to action." },
+  { id: '02', title: "Print That Drives Store Visits", tag: "Offline Demand", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80", description: "OOH and print campaigns built to improve recall, increase footfall, and strengthen local market share." },
+  { id: '03', title: "Corporate Videos That Build Trust", tag: "Faster Decision Cycles", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80", description: "Clear brand and product narratives that help buyers understand your value faster and convert with confidence." },
+  { id: '04', title: "Performance Campaigns That Lower CAC", tag: "ROI-Focused Growth", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80", description: "Channel strategy and paid execution optimized for qualified leads, stronger ROAS, and scalable revenue." },
+  { id: '05', title: "Motion Explainers That Convert", tag: "Clarity to Conversion", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80", description: "2D and 3D explainers that simplify complex offers, reduce drop-off, and increase conversion intent." }
 ];
 
 const ServicesCreative = () => {
@@ -32,20 +33,29 @@ const ServicesCreative = () => {
         
         <div className="services-title mb-[80px] md:mb-[120px] flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-[14px] text-gray-500 tracking-[4px] uppercase font-bold mb-[16px]">Capabilities</h2>
+            <h2 className="text-[14px] text-gray-500 tracking-[4px] uppercase font-bold mb-[16px]">Business Outcomes</h2>
             <h3 className="text-[48px] md:text-[64px] lg:text-[80px] font-display font-medium text-primary-dark tracking-tight leading-[1]">
-              Our Expertise
+              What Your Marketing Should Deliver
             </h3>
           </div>
-          <p className="text-[18px] text-gray-500 max-w-sm hidden md:block">
-            Engineering bespoke creative solutions designed to dominate every medium.
-          </p>
+          <div className="hidden md:flex flex-col items-start md:items-end gap-5">
+            <p className="text-[18px] text-gray-500 max-w-sm text-left md:text-right">
+              Every service is built for one thing: measurable growth in leads, conversions, and revenue.
+            </p>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 rounded-full border border-primary-dark/20 bg-white px-6 py-3 text-[12px] font-bold uppercase tracking-[2px] text-primary-dark transition-all duration-300 hover:border-primary-dark hover:bg-primary-dark hover:text-white"
+            >
+              View All Services
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
-        <div className="hidden lg:flex flex-col lg:flex-row gap-[60px] lg:gap-[100px] h-full items-center">
+        <div className="hidden lg:flex flex-col lg:flex-row gap-[50px] lg:gap-[72px] h-full items-stretch">
           
           {/* Left Side: Interactive Bounding Box for Image Mask */}
-          <div className="w-full lg:w-[45%] h-[50vh] md:h-[60vh] rounded-[24px] overflow-hidden relative shadow-2xl order-2 lg:order-1">
+          <div className="w-full lg:w-[42%] h-[54vh] md:h-[64vh] rounded-[24px] overflow-hidden relative shadow-2xl order-2 lg:order-1 lg:self-center">
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeIndex}
@@ -63,7 +73,7 @@ const ServicesCreative = () => {
           </div>
 
           {/* Right Side: Massive Interactive List */}
-          <div className="w-full lg:w-[55%] flex flex-col gap-0 border-t border-gray-200 order-1 lg:order-2">
+          <div className="w-full lg:w-[58%] flex flex-col gap-0 border-t border-gray-200 order-1 lg:order-2">
             {services.map((service, index) => {
               const isActive = index === activeIndex;
               return (
@@ -81,13 +91,13 @@ const ServicesCreative = () => {
                        <span className={`text-[16px] md:text-[20px] font-bold tracking-widest transition-colors duration-500 ${isActive ? 'text-secondary' : 'text-gray-400 group-hover:text-gray-600'}`}>
                          {service.id}
                        </span>
-                       <h4 className={`text-[32px] md:text-[48px] font-display font-medium tracking-tight transition-colors duration-500 ${isActive ? 'text-primary-dark translate-x-4' : 'text-gray-400 group-hover:text-gray-800'}`}>
+                       <h4 className={`text-[34px] md:text-[40px] lg:text-[42px] xl:text-[46px] leading-[1.08] font-display font-medium tracking-tight transition-colors duration-500 ${isActive ? 'text-primary-dark translate-x-3' : 'text-gray-400 group-hover:text-gray-800'}`}>
                          {service.title}
                        </h4>
                      </div>
                      
-                     <div className={`w-[48px] h-[48px] rounded-full flex items-center justify-center transition-all duration-500 transform ${isActive ? 'bg-primary-dark text-white scale-100 rotate-0' : 'bg-gray-100 text-gray-400 scale-0 -rotate-45 group-hover:scale-100 group-hover:text-gray-800'}`}>
-                        <ArrowUpRight className="w-5 h-5" />
+                     <div className={`w-[44px] h-[44px] md:w-[46px] md:h-[46px] rounded-full flex items-center justify-center transition-all duration-500 transform ${isActive ? 'bg-black text-white scale-100 rotate-0' : 'bg-black/85 text-white/80 scale-0 -rotate-45 group-hover:scale-100 group-hover:text-white'}`}>
+                        <ArrowUpRight className="w-4 h-4 md:w-[17px] md:h-[17px]" />
                      </div>
                   </motion.div>
                   
@@ -117,6 +127,15 @@ const ServicesCreative = () => {
         {/* Mobile Interest Section: Horizontal Scroller */}
         <div className="lg:hidden">
            <MobileServicesCarousel services={services} />
+           <div className="mt-6 flex justify-center">
+             <Link
+               to="/services"
+               className="inline-flex items-center gap-2 rounded-full border border-primary-dark/20 bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[2px] text-primary-dark"
+             >
+               View All Services
+               <ArrowUpRight className="h-4 w-4" />
+             </Link>
+           </div>
         </div>
 
       </div>

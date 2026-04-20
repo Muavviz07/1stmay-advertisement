@@ -88,13 +88,13 @@ const AboutBrief = () => {
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto text-white"
         >
            <h4 className="text-[32px] md:text-[56px] lg:text-[72px] font-display font-medium tracking-tight mb-[40px] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-             Strategically strengthening brands <br className="hidden md:block"/> with measurable creative value.
+             We Don't Just Create Ads. <br className="hidden md:block"/> We Build Outcomes.
            </h4>
            
            <div className="w-[60px] h-[2px] bg-secondary mb-[40px]"></div>
 
            <p className="text-[18px] md:text-[22px] text-gray-300 max-w-2xl font-light leading-[1.6] mb-[64px]">
-             We position brands where customers actually notice, remember, and respond across every medium.
+             Every decision we make, from concept to execution, is focused on delivering measurable business impact.
            </p>
 
            <Link to="/about" className="group flex items-center gap-4 text-[14px] font-bold tracking-[3px] uppercase">
