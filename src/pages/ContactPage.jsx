@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import { submitLeadForm } from '../lib/formApi';
 
 const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     city: '',
@@ -11,12 +14,30 @@ const ContactPage = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
+
+    if (isSending) return;
+    setIsSending(true);
+    setErrorMessage('');
+
+    try {
+      await submitLeadForm({
+        source: 'Contact Page',
+        ...formData
+      });
       setIsSubmitted(true);
-    }, 800);
+      setFormData({ name: '', city: '', email: '', message: '' });
+    } catch (error) {
+      setErrorMessage(error.message || 'Unable to send message right now.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const contactInfo = [
@@ -113,6 +134,9 @@ const ContactPage = () => {
                     <label className="text-sm font-semibold text-slate-500 ml-1 uppercase tracking-wider">Full Name</label>
                     <input
                       required
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       type="text"
                       placeholder="Your Name"
                       className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
@@ -122,6 +146,9 @@ const ContactPage = () => {
                     <label className="text-sm font-semibold text-slate-500 ml-1 uppercase tracking-wider">Company / City</label>
                     <input
                       required
+                      name="city"
+                      value={formData.city}
+                      onChange={handleChange}
                       type="text"
                       placeholder="Your Business Location"
                       className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
@@ -132,6 +159,9 @@ const ContactPage = () => {
                   <label className="text-sm font-semibold text-slate-500 ml-1">Email Address</label>
                   <input
                     required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     type="email"
                     placeholder="email@example.com"
                     className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
@@ -141,16 +171,23 @@ const ContactPage = () => {
                   <label className="text-sm font-semibold text-slate-500 ml-1">Message</label>
                   <textarea
                     required
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows="4"
                     placeholder="How can we help you?"
                     className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900 resize-none"
                   ></textarea>
                 </div>
+                {errorMessage && (
+                  <p className="text-sm text-red-600 font-medium">{errorMessage}</p>
+                )}
                 <button
                   type="submit"
+                  disabled={isSending}
                   className="w-full bg-slate-950 text-white font-bold py-5 rounded-2xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-3"
                 >
-                  Send Message <Send className="w-5 h-5" />
+                  {isSending ? 'Sending...' : 'Send Message'} <Send className="w-5 h-5" />
                 </button>
               </motion.form>
             ) : (
@@ -173,7 +210,10 @@ const ContactPage = () => {
                   Thank you for reaching out. Our team will get back to you shortly.
                 </p>
                 <button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setErrorMessage('');
+                  }}
                   className="text-primary font-bold hover:underline"
                 >
                   Send another message

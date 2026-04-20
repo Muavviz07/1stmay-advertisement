@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, CheckCircle } from 'lucide-react';
+import { submitLeadForm } from '../lib/formApi';
 
 const InquiryModal = ({ isOpen, onClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    city: '',
+    email: '',
+    message: ''
+  });
 
   // Prevent background scroll when modal is open
   React.useEffect(() => {
@@ -17,11 +26,39 @@ const InquiryModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  React.useEffect(() => {
+    if (!isOpen) {
+      setIsSubmitted(false);
+      setIsSending(false);
+      setErrorMessage('');
+      setFormData({ name: '', city: '', email: '', message: '' });
+    }
+  }, [isOpen]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTimeout(() => {
+
+    if (isSending) return;
+
+    setIsSending(true);
+    setErrorMessage('');
+
+    try {
+      await submitLeadForm({
+        source: 'Inquiry Modal',
+        ...formData
+      });
       setIsSubmitted(true);
-    }, 800);
+    } catch (error) {
+      setErrorMessage(error.message || 'Unable to submit inquiry right now.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -77,6 +114,9 @@ const InquiryModal = ({ isOpen, onClose }) => {
                         <label className="text-[13px] font-semibold text-slate-400 ml-1">Full Name</label>
                         <input 
                           required
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
                           type="text" 
                           placeholder="Your Name"
                           className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
@@ -86,6 +126,9 @@ const InquiryModal = ({ isOpen, onClose }) => {
                         <label className="text-[13px] font-semibold text-slate-400 ml-1">Your City</label>
                         <input 
                           required
+                          name="city"
+                          value={formData.city}
+                          onChange={handleChange}
                           type="text" 
                           placeholder="Chennai, India"
                           className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
@@ -96,6 +139,9 @@ const InquiryModal = ({ isOpen, onClose }) => {
                       <label className="text-[13px] font-semibold text-slate-400 ml-1">Email Address</label>
                       <input 
                         required
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         type="email" 
                         placeholder="email@example.com"
                         className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
@@ -105,16 +151,23 @@ const InquiryModal = ({ isOpen, onClose }) => {
                       <label className="text-[13px] font-semibold text-slate-400 ml-1">Tell us about your project</label>
                       <textarea 
                         required
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         rows="4" 
                         placeholder="Project details..."
                         className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900 resize-none font-sans"
                       ></textarea>
                     </div>
+                    {errorMessage && (
+                      <p className="text-sm text-red-600 font-medium">{errorMessage}</p>
+                    )}
                     <button 
                       type="submit" 
+                      disabled={isSending}
                       className="w-full bg-slate-950 text-white font-bold py-5 rounded-2xl hover:bg-slate-800 transition-all shadow-xl active:scale-[0.98] flex items-center justify-center gap-3 mt-4"
                     >
-                      Send Inquiry <Send className="w-5 h-5" />
+                      {isSending ? 'Sending...' : 'Send Inquiry'} <Send className="w-5 h-5" />
                     </button>
                   </form>
                 </motion.div>
