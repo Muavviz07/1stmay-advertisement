@@ -24,7 +24,7 @@ const Footer = ({ onOpenInquiry }) => {
             <img
               src={logo}
               alt="1st May Logo"
-              className="h-[80px] w-auto object-contain brightness-0 invert mb-[24px]"
+              className="h-[100px] w-auto object-contain mb-[24px] invert grayscale brightness-[1.8] contrast-[1.2]"
             />
             <p className="text-gray-400 leading-[1.8] max-w-sm mb-[40px]">
               An architect and trailblazer in advertising, delivering creative solutions with measurable business value.
@@ -38,7 +38,7 @@ const Footer = ({ onOpenInquiry }) => {
               <li className="flex items-start gap-[16px]">
                 <MapPin className="w-[20px] h-[20px] text-secondary shrink-0 mt-1" />
                 <span className="text-gray-400 leading-[1.6]">
-                  No. 165, 2nd Floor, <br /> Devi Kirupa Apartment,<br /> Baskar Colony, 1st Street,<br /> Saligramam, Chennai 600 093.
+                  No.b4, 1st floor, Yamuna Appartment, <br /> Manonmaniyam street, Chitlapakkam, <br /> Chennai -600064
                 </span>
               </li>
               <li className="flex items-center gap-[16px]">

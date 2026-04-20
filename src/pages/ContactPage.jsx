@@ -35,7 +35,7 @@ const ContactPage = () => {
     {
       icon: <MapPin className="w-6 h-6 text-secondary" />,
       title: 'Location',
-      details: ['Saligramam, Chennai 600 093.'],
+      details: ['No.b4, 1st floor, Yamuna Appartment,', 'Manonmaniyam street, Chitlapakkam,', 'Chennai -600064'],
       href: 'https://goo.gl/maps/placeholder'
     }
   ];
