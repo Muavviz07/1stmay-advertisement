@@ -58,15 +58,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full transition-all duration-300 flex items-center ${isOpen ? 'z-[200]' : 'z-[100]'} ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm h-[70px]' : 'bg-primary-dark/80 backdrop-blur-sm h-[90px]'}`}>
+    <nav className={`fixed top-0 left-0 w-full transition-all duration-300 flex items-center ${isOpen ? 'z-[200]' : 'z-[100]'} ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm h-[85px]' : 'bg-primary-dark/80 backdrop-blur-sm h-[110px]'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex justify-between items-center">
 
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center group relative h-full">
+        <Link to="/" className="flex items-center group relative h-full py-2">
+          {/* Subtle glow for logo clarity on dark background */}
+          {!scrolled && !isOpen && (
+            <div className="absolute inset-0 bg-white/5 blur-[30px] rounded-full pointer-events-none" />
+          )}
           <img
             src={logo}
             alt="1st May Logo"
-            className={`h-[50px] md:h-[65px] w-auto object-contain transition-all duration-300 ${(scrolled || isOpen) ? '' : 'brightness-0 invert'}`}
+            className={`transition-all duration-300 relative z-10 w-auto object-contain ${scrolled || isOpen ? 'h-[65px]' : 'h-[85px] brightness-0 invert opacity-95'}`}
           />
         </Link>
 
