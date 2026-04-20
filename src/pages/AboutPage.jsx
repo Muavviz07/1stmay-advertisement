@@ -26,12 +26,12 @@ const AboutPage = () => {
         </div>
         
         <div className="relative z-10 max-w-4xl">
-           <h2 className="text-[14px] text-gray-400 tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn">About Us</h2>
+           <h2 className="text-[14px] text-gray-400 tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn tracking-wider">Our DNA</h2>
            <h1 className="about-hero-title text-[10vw] md:text-[8vw] lg:text-[7vw] font-display font-bold text-primary-dark leading-[0.9] tracking-tighter mb-[48px]">
-             WE CREATIVELY <br/> <span className="text-secondary">STRENGTHEN</span> <br/> YOUR TRADES.
+             THE ARCHITECTURE <br/> OF <span className="text-secondary">IMPACTFUL</span> <br/> ADVERTISING.
            </h1>
            <p className="text-[18px] md:text-[22px] text-gray-500 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
-             1st May Advertisement is built on trust and transparency, scaling brands where customers actually notice, remember, and respond.
+             1st May Advertisement is built on the principle of strategic transparency, crafting campaigns where precision meets purpose to scale your brand effectively.
            </p>
         </div>
       </section>
@@ -55,10 +55,10 @@ const AboutPage = () => {
                   
                   <div className="space-y-[40px] max-w-xl">
                      <p className="text-[20px] md:text-[24px] text-gray-300 leading-[1.6] font-light">
-                        Established with a singular focus: **transparency in every frame.** We position brands where they are actually noticed, remembered, and acted upon.
+                        We view every campaign as an architectural milestone. Our mission is to provide **unwavering transparency** while delivering creative support with measurable business value.
                      </p>
                      <p className="text-[17px] text-gray-400 leading-[1.8]">
-                        Our core model is clear. We aim to be a trendsetter in advertising by delivering creative support with measurable business value, scaling quality consistently.
+                        Since our inception, we have focused on one thing: positioning brands where they are not just seen, but remembered. We eliminate media wastage through rigorous research and meticulous execution.
                      </p>
                   </div>
 
@@ -112,36 +112,36 @@ const AboutPage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-100 divide-y md:divide-y-0 md:divide-x divide-gray-100">
                {[
-                 { 
-                   title: "Customized Campaigns", 
-                   desc: "Bespoke strategies that mirror your unique brand DNA across every medium.",
-                   icon: (
-                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5"/>
-                        <circle cx="20" cy="20" r="8" fill="currentColor"/>
-                     </svg>
-                   )
-                 },
-                 { 
-                   title: "Research-led Execution", 
-                   desc: "Data-backed creative decisions that ensure zero wastage of your reach.",
-                   icon: (
-                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1.5"/>
-                        <rect x="12" y="12" width="16" height="16" fill="currentColor"/>
-                     </svg>
-                   )
-                 },
-                 { 
-                   title: "Budget Discipline", 
-                   desc: "Maximize impact without exceeding projections. We value your investment.",
-                   icon: (
-                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 3L37.3205 33H2.67949L20 3Z" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M20 15L27 27H13L20 15Z" fill="currentColor"/>
-                     </svg>
-                   )
-                 }
+                  { 
+                    title: "Bespoke Campaigns", 
+                    desc: "Tailored strategies that mirror your brand's unique DNA, built for maximum impact across every medium.",
+                    icon: (
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5"/>
+                         <circle cx="20" cy="20" r="8" fill="currentColor"/>
+                      </svg>
+                    )
+                  },
+                  { 
+                    title: "Strategic Execution", 
+                    desc: "Data-backed creative decisions that ensure your message reaches the right audience without compromise.",
+                    icon: (
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <rect x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1.5"/>
+                         <rect x="12" y="12" width="16" height="16" fill="currentColor"/>
+                      </svg>
+                    )
+                  },
+                  { 
+                    title: "Financial Integrity", 
+                    desc: "Transparent budget management ensuring every investment produces measurable results for your bottom line.",
+                    icon: (
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M20 3L37.3205 33H2.67949L20 3Z" stroke="currentColor" strokeWidth="1.5"/>
+                         <path d="M20 15L27 27H13L20 15Z" fill="currentColor"/>
+                      </svg>
+                    )
+                  }
                ].map((item, i) => (
                  <div key={i} className="p-[64px] hover:bg-bg-light transition-all duration-500 group">
                     <div className="text-secondary mb-[48px] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">{item.icon}</div>

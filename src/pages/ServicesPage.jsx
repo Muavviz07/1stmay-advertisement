@@ -178,8 +178,8 @@ const ServicesPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
           <p className="text-[13px] uppercase tracking-[8px] text-secondary font-semibold mb-4">Services</p>
-          <h1 className="services-hero-title text-[4rem] md:text-[5rem] lg:text-[5.8rem] font-display tracking-tight leading-[0.9] text-slate-900">
-            Creative services made <span className="text-secondary">simple, smart, and signature.</span>
+          <h1 className="services-hero-title text-[4rem] md:text-[5rem] lg:text-[5.8rem] font-display tracking-tight leading-[0.9] text-slate-900 uppercase font-bold">
+            Redefining <br className="hidden md:block" /> <span className="text-secondary">Advertising</span> standards.
           </h1>
           <p className="services-hero-copy mx-auto mt-8 max-w-3xl text-[18px] leading-[1.9] text-slate-600">
             We help brands move faster with work that looks premium, reads clear, and feels surprising. This is service design built for memorable campaigns and real results.

@@ -38,7 +38,7 @@ const Footer = ({ onOpenInquiry }) => {
               <li className="flex items-start gap-[16px]">
                 <MapPin className="w-[20px] h-[20px] text-secondary shrink-0 mt-1" />
                 <span className="text-gray-400 leading-[1.6]">
-                  No.b4, 1st floor, Yamuna Appartment, <br /> Manonmaniyam street, Chitlapakkam, <br /> Chennai -600064
+                  No.b4, 1st floor, Yamuna Appartment, <br /> Manonmaniyam street, Chitlapakkam, <br /> Chennai - 600064
                 </span>
               </li>
               <li className="flex items-center gap-[16px]">

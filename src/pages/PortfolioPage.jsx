@@ -77,8 +77,8 @@ const PortfolioPage = () => {
         
         <div className="relative z-10 max-w-4xl">
           <h2 className="text-[14px] text-secondary tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn">Portfolio</h2>
-          <h1 className="portfolio-hero-title text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-bold text-white leading-[0.9] tracking-tighter mb-[48px]">
-            CRAFTED <br/> <span className="text-secondary">DREAMS,</span> <br/> FORGED INTO <br/> REALITY.
+          <h1 className="portfolio-hero-title text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-bold text-white leading-[0.9] tracking-tighter mb-[48px] uppercase">
+            Crafting <br/> <span className="text-secondary italic">Brand</span> <br/> Landmarks.
           </h1>
           <p className="text-[18px] md:text-[22px] text-gray-300 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
             A curated collection of cinematic excellence, strategic precision, and creative innovation that transforms brands into unforgettable experiences.

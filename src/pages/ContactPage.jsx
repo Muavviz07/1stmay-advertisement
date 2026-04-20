@@ -22,21 +22,21 @@ const ContactPage = () => {
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6 text-secondary" />,
-      title: 'Phone',
+      title: 'Direct Line',
       details: ['+91 44 4859 4307', '+91 79045 23814'],
       href: 'tel:+914448594307'
     },
     {
       icon: <Mail className="w-6 h-6 text-secondary" />,
-      title: 'Email',
+      title: 'Digital Correspondence',
       details: ['admin@1stmay.in'],
       href: 'mailto:admin@1stmay.in'
     },
     {
       icon: <MapPin className="w-6 h-6 text-secondary" />,
-      title: 'Location',
-      details: ['No.b4, 1st floor, Yamuna Appartment,', 'Manonmaniyam street, Chitlapakkam,', 'Chennai -600064'],
-      href: 'https://goo.gl/maps/placeholder'
+      title: 'Project HQ',
+      details: ['Chitlapakkam, Chennai - 600064'],
+      href: '#'
     }
   ];
 
@@ -49,14 +49,14 @@ const ContactPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-accent-red font-bold text-lg mb-4 block uppercase tracking-widest">
-            / Contact
+          <span className="text-secondary font-bold text-lg mb-4 block uppercase tracking-widest">
+            / Inquiries
           </span>
-          <h1 className="text-[4rem] md:text-[6rem] font-display font-medium leading-[0.9] tracking-tight text-slate-900 mb-8">
-            Crafting Unique <br /> Narratives
+          <h1 className="text-[4rem] md:text-[6rem] font-display font-bold leading-[0.9] tracking-tighter text-slate-900 mb-8 uppercase">
+            Connect with <br /> our Strategists
           </h1>
           <p className="text-slate-600 text-xl max-w-2xl mx-auto leading-relaxed">
-            Ready to elevate your brand? Reach out to us and let's start building something extraordinary together.
+            Ready to elevate your brand's architecture? Reach out to us and let's start building your next landmark campaign together.
           </p>
         </motion.div>
       </section>
@@ -110,44 +110,44 @@ const ContactPage = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-500 ml-1">Name</label>
-                    <input 
+                    <label className="text-sm font-semibold text-slate-500 ml-1 uppercase tracking-wider">Full Name</label>
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       placeholder="Your Name"
-                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900" 
+                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-500 ml-1">City</label>
-                    <input 
+                    <label className="text-sm font-semibold text-slate-500 ml-1 uppercase tracking-wider">Company / City</label>
+                    <input
                       required
-                      type="text" 
-                      placeholder="Your City"
-                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900" 
+                      type="text"
+                      placeholder="Your Business Location"
+                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-500 ml-1">Email Address</label>
-                    <input 
-                      required
-                      type="email" 
-                      placeholder="email@example.com"
-                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900" 
-                    />
+                  <label className="text-sm font-semibold text-slate-500 ml-1">Email Address</label>
+                  <input
+                    required
+                    type="email"
+                    placeholder="email@example.com"
+                    className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900"
+                  />
                 </div>
                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-500 ml-1">Message</label>
-                    <textarea 
-                      required
-                      rows="4" 
-                      placeholder="How can we help you?"
-                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900 resize-none"
-                    ></textarea>
+                  <label className="text-sm font-semibold text-slate-500 ml-1">Message</label>
+                  <textarea
+                    required
+                    rows="4"
+                    placeholder="How can we help you?"
+                    className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-slate-900 resize-none"
+                  ></textarea>
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="w-full bg-slate-950 text-white font-bold py-5 rounded-2xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-3"
                 >
                   Send Message <Send className="w-5 h-5" />
@@ -172,7 +172,7 @@ const ContactPage = () => {
                 <p className="text-slate-600 mb-8 max-w-[280px]">
                   Thank you for reaching out. Our team will get back to you shortly.
                 </p>
-                <button 
+                <button
                   onClick={() => setIsSubmitted(false)}
                   className="text-primary font-bold hover:underline"
                 >
@@ -190,13 +190,13 @@ const ContactPage = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="h-full min-h-[500px] w-full bg-slate-100 rounded-[48px] overflow-hidden relative shadow-inner"
         >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.643355523455!2d80.2014136758686!3d13.045620987277252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266e746e01761%3A0x89980c62c3f86e!2s1st%20May%20Advertisement!5e0!3m2!1sen!2sin!4v1713508000000!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.643355523455!2d80.2014136758686!3d13.045620987277252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266e746e01761%3A0x89980c62c3f86e!2s1st%20May%20Advertisement!5e0!3m2!1sen!2sin!4v1713508000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Office Location Map"
           ></iframe>
