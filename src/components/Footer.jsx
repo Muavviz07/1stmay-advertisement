@@ -24,6 +24,7 @@ const Footer = ({ onOpenInquiry }) => {
             <img
               src={logo}
               alt="1st May Logo"
+              loading="lazy"
               className="h-[80px] w-auto object-contain mb-[24px] brightness-0 invert opacity-90"
             />
             <p className="text-gray-400 leading-[1.8] max-w-sm mb-[40px]">

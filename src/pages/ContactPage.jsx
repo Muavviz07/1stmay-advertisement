@@ -52,7 +52,7 @@ const ContactPage = () => {
           <span className="text-secondary font-bold text-lg mb-4 block uppercase tracking-widest">
             / Inquiries
           </span>
-          <h1 className="text-[4rem] md:text-[6rem] font-display font-bold leading-[0.9] tracking-tighter text-slate-900 mb-8 uppercase">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.9] tracking-tighter text-slate-900 mb-8 uppercase">
             Connect with <br /> our Strategists
           </h1>
           <p className="text-slate-600 text-xl max-w-2xl mx-auto leading-relaxed">

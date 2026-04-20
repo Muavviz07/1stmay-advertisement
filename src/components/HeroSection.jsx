@@ -1,12 +1,16 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
+import { useInquiry } from './InquiryContext';
 import HeroScene from './HeroScene';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+  const { openInquiry } = useInquiry();
+  const navigate = useNavigate();
   const headlineRef = useRef(null);
   
   useEffect(() => {
@@ -109,6 +113,7 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-[24px]">
             <motion.button 
+              onClick={openInquiry}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(76,175,80,0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
@@ -117,6 +122,7 @@ const HeroSection = () => {
               Get Started
             </motion.button>
             <motion.button 
+              onClick={() => navigate('/portfolio')}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.5)", boxShadow: "0 0 20px rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.4, ease: "easeOut" }}

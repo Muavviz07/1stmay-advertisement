@@ -9,7 +9,7 @@ const MobileActionHub = () => {
   const actions = [
     { icon: <Home size={20} />, label: 'Home', path: '/' },
     { icon: <Info size={20} />, label: 'About', path: '/about' },
-    { icon: <Briefcase size={20} />, label: 'Work', path: '/portfolio' },
+    { icon: <Briefcase size={20} />, label: 'Portfolio', path: '/portfolio' },
     { icon: <Mail size={20} />, label: 'Contact', path: '/contact' },
   ];
 

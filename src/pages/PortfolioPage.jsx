@@ -77,7 +77,7 @@ const PortfolioPage = () => {
         
         <div className="relative z-10 max-w-4xl">
           <h2 className="text-[14px] text-secondary tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn">Portfolio</h2>
-          <h1 className="portfolio-hero-title text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-bold text-white leading-[0.9] tracking-tighter mb-[48px] uppercase">
+          <h1 className="portfolio-hero-title text-5xl md:text-7xl lg:text-7xl font-display font-bold text-white leading-[0.9] tracking-tighter mb-[48px] uppercase">
             Crafting <br/> <span className="text-secondary italic">Brand</span> <br/> Landmarks.
           </h1>
           <p className="text-[18px] md:text-[22px] text-gray-300 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
@@ -141,6 +141,7 @@ const PortfolioPage = () => {
                     <img 
                       src={item.img} 
                       alt={item.title} 
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     />
                     
@@ -206,7 +207,7 @@ const PortfolioPage = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center mb-[80px]">
             <h2 className="text-[13px] text-secondary tracking-[8px] uppercase font-bold mb-[24px]">Featured Excellence</h2>
-            <h3 className="text-[48px] md:text-[64px] font-display font-medium tracking-tighter leading-[0.9] mb-[32px]">
+            <h3 className="text-4xl md:text-6xl font-display font-medium tracking-tighter leading-[0.9] mb-[32px]">
               STANDOUT <br/> <span className="text-secondary italic">CREATIONS</span>
             </h3>
             <p className="text-[18px] text-gray-300 max-w-2xl mx-auto">
@@ -221,6 +222,7 @@ const PortfolioPage = () => {
                   <img 
                     src={item.img} 
                     alt={item.title} 
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                   />
                 </div>

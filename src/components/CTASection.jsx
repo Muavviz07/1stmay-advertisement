@@ -42,6 +42,7 @@ const CTASection = () => {
         </p>
         
         <motion.button 
+          onClick={openInquiry}
           whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
           whileTap={{ scale: 0.95 }}
           className="bg-transparent border border-white/30 text-white px-[56px] py-[24px] rounded-full font-bold text-[16px] tracking-[2px] uppercase transition-colors duration-500 hover:border-white shadow-[0_0_40px_rgba(255,255,255,0)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center gap-4"

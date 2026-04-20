@@ -70,6 +70,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="1st May Logo"
+            loading="lazy"
             className={`transition-all duration-300 relative z-10 w-auto object-contain ${scrolled || isOpen ? 'h-[65px]' : 'h-[85px] brightness-0 invert opacity-95'}`}
           />
         </Link>
@@ -143,7 +144,10 @@ const Navbar = () => {
                 ))}
                 <motion.li custom={navLinks.length} variants={linkVariants} className="mt-6 flex justify-center">
                   <button
-                    onClick={openInquiry}
+                    onClick={() => {
+                      openInquiry();
+                      setIsOpen(false);
+                    }}
                     className="w-full max-w-[280px] bg-secondary text-white py-3.5 rounded-xl font-bold text-base shadow-xl active:scale-95 transition-transform"
                   >
                     GET STARTED NOW

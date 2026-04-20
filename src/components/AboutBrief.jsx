@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -96,10 +97,10 @@ const AboutBrief = () => {
              We position brands where customers actually notice, remember, and respond across every medium.
            </p>
 
-           <button className="group flex items-center gap-4 text-[14px] font-bold tracking-[3px] uppercase">
+           <Link to="/about" className="group flex items-center gap-4 text-[14px] font-bold tracking-[3px] uppercase">
               <span>Our Vision</span>
               <div className="w-[40px] h-[2px] bg-white group-hover:w-[60px] transition-all duration-300"></div>
-           </button>
+           </Link>
         </div>
       </div>
 

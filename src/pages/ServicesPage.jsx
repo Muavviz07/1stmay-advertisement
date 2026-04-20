@@ -178,7 +178,7 @@ const ServicesPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
           <p className="text-[13px] uppercase tracking-[8px] text-secondary font-semibold mb-4">Services</p>
-          <h1 className="services-hero-title text-[4rem] md:text-[5rem] lg:text-[5.8rem] font-display tracking-tight leading-[0.9] text-slate-900 uppercase font-bold">
+          <h1 className="services-hero-title text-5xl md:text-7xl lg:text-7xl font-display tracking-tight leading-[0.9] text-slate-900 uppercase font-bold">
             Redefining <br className="hidden md:block" /> <span className="text-secondary">Advertising</span> standards.
           </h1>
           <p className="services-hero-copy mx-auto mt-8 max-w-3xl text-[18px] leading-[1.9] text-slate-600">
@@ -195,7 +195,7 @@ const ServicesPage = () => {
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
             <div className="space-y-6">
               <p className="text-[13px] uppercase tracking-[8px] text-secondary font-semibold">What we deliver</p>
-              <h2 className="text-[3.2rem] md:text-[3.8rem] font-display tracking-tight leading-[1.0] text-slate-900">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight leading-[1.0] text-slate-900">
                 A service suite that feels like a creative toolkit, not a checklist.
               </h2>
               <p className="max-w-xl text-[18px] leading-[1.9] text-slate-600">
@@ -223,7 +223,7 @@ const ServicesPage = () => {
               <p className="text-accent-red font-bold text-lg mb-4 flex items-center gap-2">
                 <span className="opacity-50">/</span> Services We Offer
               </p>
-              <h2 className="text-[4rem] md:text-[5.5rem] font-display font-medium tracking-tight leading-[0.95] text-slate-900">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[0.95] text-slate-900">
                 Certified<br />Excellence
               </h2>
             </div>
@@ -251,6 +251,7 @@ const ServicesPage = () => {
                     <img 
                       src={service.img} 
                       alt={service.title} 
+                      loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Subtle Overlay to maintain color while ensuring text legibility */}
