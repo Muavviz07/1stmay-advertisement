@@ -41,9 +41,9 @@ const ContactPage = () => {
   ];
 
   return (
-    <main className="bg-white min-h-screen pt-32 pb-20 overflow-x-hidden">
+    <main className="bg-white min-h-screen pt-[160px] pb-[120px] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20 text-center">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-[120px] text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-24">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-[120px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactInfo.map((info, index) => (
             <motion.a

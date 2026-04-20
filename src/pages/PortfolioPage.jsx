@@ -70,7 +70,7 @@ const PortfolioPage = () => {
     <div className="bg-white min-h-screen">
       
       {/* 1. Hero Section */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-[90px] md:pt-[100px] relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-[160px] relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark">
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
         </div>
@@ -87,8 +87,8 @@ const PortfolioPage = () => {
       </section>
 
       {/* 2. Category Filter Section */}
-      <section className="py-[100px] bg-white border-b border-gray-100">
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+      <section className="py-[120px] bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-[60px]">
             <h2 className="text-[13px] text-gray-400 tracking-[8px] uppercase font-bold mb-[24px]">Explore Our Work</h2>
             <p className="text-[16px] text-gray-600 max-w-xl mx-auto">
@@ -119,7 +119,7 @@ const PortfolioPage = () => {
 
       {/* 3. Portfolio Showcase */}
       <section className="py-[120px] bg-bg-light">
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <AnimatePresence mode="wait">
             <motion.div 
               key={selectedCategory}
@@ -203,7 +203,7 @@ const PortfolioPage = () => {
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[100px]"></div>
         </div>
         
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center mb-[80px]">
             <h2 className="text-[13px] text-secondary tracking-[8px] uppercase font-bold mb-[24px]">Featured Excellence</h2>
             <h3 className="text-[48px] md:text-[64px] font-display font-medium tracking-tighter leading-[0.9] mb-[32px]">

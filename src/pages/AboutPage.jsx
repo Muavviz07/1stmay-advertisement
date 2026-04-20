@@ -18,7 +18,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="pt-[100px] bg-bg-light">
+    <div className="pt-[160px] bg-bg-light">
       {/* 1. About Page Hero */}
       <section className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden bg-white">
         <div className="absolute inset-0 z-0 opacity-5">
@@ -37,7 +37,7 @@ const AboutPage = () => {
       </section>
 
       {/* 2. Philosophy & Vision: The Perspective Shift */}
-      <section className="py-[180px] bg-primary-dark text-white relative overflow-hidden">
+      <section className="py-[120px] bg-primary-dark text-white relative overflow-hidden">
          {/* Parallax Background Elements */}
          <div className="absolute top-[20%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
          
@@ -97,7 +97,7 @@ const AboutPage = () => {
       </section>
 
       {/* 3. Our Strong Suit: The Three Pillars (Geometric Approach) */}
-      <section className="py-[180px] bg-white relative">
+      <section className="py-[120px] bg-white relative">
          <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-[120px]">
                <div className="max-w-xl">
@@ -154,7 +154,7 @@ const AboutPage = () => {
       </section>
 
       {/* 4. Fundamental Promise: The DNA List (Interactive Breakdown) */}
-      <section className="py-[180px] bg-bg-light">
+      <section className="py-[120px] bg-bg-light">
          <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-[100px]">
                <div className="lg:col-span-8">

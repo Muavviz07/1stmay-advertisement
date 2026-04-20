@@ -172,11 +172,11 @@ const ServicesPage = () => {
 
   return (
     <main className="bg-white text-slate-900 overflow-x-hidden">
-      <section className="relative overflow-hidden bg-white pt-[120px] pb-[100px]">
+      <section className="relative overflow-hidden bg-white pt-[160px] pb-[120px]">
         <div className="absolute left-0 top-0 h-[380px] w-[380px] rounded-full bg-secondary/10 blur-[120px]" />
         <div className="absolute right-0 top-[20%] h-[320px] w-[320px] rounded-full bg-primary/10 blur-[90px]" />
 
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
           <p className="text-[13px] uppercase tracking-[8px] text-secondary font-semibold mb-4">Services</p>
           <h1 className="services-hero-title text-[4rem] md:text-[5rem] lg:text-[5.8rem] font-display tracking-tight leading-[0.9] text-slate-900">
             Creative services made <span className="text-secondary">simple, smart, and signature.</span>
@@ -187,7 +187,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="relative py-[100px] bg-slate-50 overflow-hidden">
+      <section className="relative py-[120px] bg-slate-50 overflow-hidden">
         <div className="absolute right-0 top-0 h-[260px] w-[260px] rounded-full bg-secondary/10 blur-[90px]" />
         <div className="absolute left-0 bottom-0 h-[260px] w-[260px] rounded-full bg-primary/10 blur-[90px]" />
 
@@ -215,7 +215,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-[120px] bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Header Section */}
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
@@ -292,7 +292,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="relative py-[100px] bg-slate-50 overflow-hidden">
+      <section className="relative py-[120px] bg-slate-50 overflow-hidden">
         <div className="absolute right-0 top-0 h-[220px] w-[220px] rounded-full bg-secondary/10 blur-[90px]" />
         <div className="absolute left-0 bottom-0 h-[240px] w-[240px] rounded-full bg-primary/10 blur-[90px]" />
 
