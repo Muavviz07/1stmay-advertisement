@@ -15,8 +15,8 @@ The site forms now submit to a backend API at `/api/contact` and send structured
 
 Copy `.env.example` to `.env` and fill SMTP credentials.
 
-- `MAIL_TO` defaults to `muhammedmuavviz@gmail.com` for testing
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` are required to send real emails
+- `MAIL_TO` is the recipient inbox for form leads
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` are required to send emails
 
 ### 2) Run locally
 
