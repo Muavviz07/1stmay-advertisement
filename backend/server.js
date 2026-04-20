@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = Number(process.env.PORT || 4000);
+const port = Number(process.env.BACKEND_PORT || 4010);
 
 const fixedRecipient = process.env.MAIL_TO || '';
 const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER || '';

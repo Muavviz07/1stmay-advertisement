@@ -32,7 +32,7 @@ npm run dev
 
 Open this in browser:
 
-`http://localhost:4000/api/health`
+`http://localhost:4010/api/health`
 
 Expected response:
 
