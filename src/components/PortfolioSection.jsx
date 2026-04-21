@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, ChevronDown } from 'lucide-react';
 
 const portfolioItems = [
   { id: '01', title: 'Summer Refresh', category: 'Advertising', metric: '32% Lower CPL', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', description: "A campaign refresh focused on message clarity, visual consistency, and sharper creative hooks across video and static placements. By restructuring the narrative sequence and tightening the first five seconds of communication, we improved early attention signals and reduced cost-per-lead across key performance channels while maintaining quality lead intent." },
@@ -53,6 +53,8 @@ const PortfolioModal = ({ item, onClose }) => {
 const PortfolioSection = () => {
   const [hoveredItem, setHoveredItem] = useState(portfolioItems[0]);
   const [activeItem, setActiveItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(portfolioItems[0]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (activeItem) document.body.style.overflow = 'hidden';
@@ -76,48 +78,77 @@ const PortfolioSection = () => {
             </p>
           </div>
 
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 no-scrollbar">
-            {portfolioItems.map((item) => (
+          {/* Dropdown Selector */}
+          <div className="mb-8">
+            <div className="relative">
               <button
-                key={item.id}
-                onClick={() => setActiveItem(item)}
-                className="w-[86%] shrink-0 snap-center rounded-[28px] overflow-hidden bg-white border border-gray-200 text-left shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)]"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full bg-white rounded-[16px] p-4 flex items-center justify-between shadow-lg border border-gray-200"
               >
-                <div className="relative h-[260px]">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-                  <div className="absolute left-5 right-5 bottom-5 text-white">
-                    <p className="text-[11px] font-bold tracking-[2px] uppercase text-secondary mb-2">
-                      {item.category}
-                    </p>
-                    <h3 className="text-[28px] font-display font-semibold leading-[1.05] tracking-tight">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="p-5">
-                  <p className="text-[13px] uppercase tracking-[2px] text-gray-400 font-bold mb-2">
-                    Key Result
-                  </p>
-                  <p className="text-[24px] font-display font-bold text-primary-dark mb-4">
-                    {item.metric}
-                  </p>
-                  <p className="text-[14px] text-gray-600 leading-[1.7] max-h-[74px] overflow-hidden">
-                    {item.description}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold tracking-[2px] uppercase text-primary-dark">
-                    View Case <ArrowRight className="w-4 h-4 -rotate-45" />
-                  </div>
-                </div>
+                <span className="text-[16px] font-semibold text-gray-800">{selectedItem.title}</span>
+                <ChevronDown className={`w-5 h-5 text-gray-600 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-            ))}
-            <div className="w-2 shrink-0" />
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, y: -10 }}
+                    animate={{ opacity: 1, height: 'auto', y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: -10 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className="absolute top-full mt-2 w-full bg-white rounded-[16px] shadow-xl overflow-hidden z-10 border border-gray-200"
+                  >
+                    {portfolioItems.map((item) => (
+                      <div
+                        key={item.id}
+                        onClick={() => { setSelectedItem(item); setIsDropdownOpen(false); }}
+                        className="relative h-16 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                        style={{ backgroundImage: `url(${item.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                      >
+                        <div className="absolute inset-0 bg-black/60 flex items-center px-4">
+                          <span className="text-white font-semibold text-[14px]">{item.title}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Selected Item Card */}
+          <div className="rounded-[28px] overflow-hidden bg-white border border-gray-200 text-left shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)]">
+            <div className="relative h-[260px]">
+              <img
+                src={selectedItem.img}
+                alt={selectedItem.title}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute left-5 right-5 bottom-5 text-white">
+                <p className="text-[11px] font-bold tracking-[2px] uppercase text-secondary mb-2">
+                  {selectedItem.category}
+                </p>
+                <h3 className="text-[28px] font-display font-semibold leading-[1.05] tracking-tight">
+                  {selectedItem.title}
+                </h3>
+              </div>
+            </div>
+
+            <div className="p-5">
+              <p className="text-[13px] uppercase tracking-[2px] text-gray-400 font-bold mb-2">
+                Key Result
+              </p>
+              <p className="text-[24px] font-display font-bold text-primary-dark mb-4">
+                {selectedItem.metric}
+              </p>
+              <p className="text-[14px] text-gray-600 leading-[1.7]">
+                {selectedItem.description}
+              </p>
+              <button onClick={() => setActiveItem(selectedItem)} className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold tracking-[2px] uppercase text-primary-dark">
+                View Case <ArrowRight className="w-4 h-4 -rotate-45" />
+              </button>
+            </div>
           </div>
         </div>
         

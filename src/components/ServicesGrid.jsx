@@ -19,6 +19,10 @@ const services = [
 const ServicesCreative = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const toggleSection = (index) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
+  };
+
   useEffect(() => {
     gsap.fromTo('.services-title', 
       { opacity: 0, y: 50 },
@@ -123,18 +127,76 @@ const ServicesCreative = () => {
 
         </div>
 
-        {/* Mobile Interest Section: Horizontal Scroller */}
-        <div className="lg:hidden">
-           <MobileServicesCarousel services={services} />
-           <div className="mt-6 flex justify-center">
-             <Link
-               to="/services"
-               className="inline-flex items-center gap-2 rounded-full border border-primary-dark/20 bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[2px] text-primary-dark"
-             >
-               View All Services
-               <ArrowUpRight className="h-4 w-4" />
-             </Link>
-           </div>
+        {/* Mobile Accordion Design */}
+        <div className="lg:hidden flex flex-col gap-4">
+          {services.map((service, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <div key={service.id} className="border-b border-gray-100 overflow-hidden rounded-2xl bg-white shadow-sm">
+                <div
+                  className={`cursor-pointer p-6 flex justify-between items-center transition-all duration-300 ${isActive ? 'bg-primary-light' : 'bg-white'}`}
+                  onClick={() => toggleSection(index)}
+                >
+                  <div className="flex items-center gap-5">
+                    <span className={`text-[14px] font-bold transition-colors duration-300 ${isActive ? 'text-secondary' : 'text-gray-400'}`}>
+                      {service.id}
+                    </span>
+                    <h4 className={`text-[18px] font-bold tracking-tight transition-colors duration-300 ${isActive ? 'text-primary-dark' : 'text-gray-600'}`}>
+                      {service.title}
+                    </h4>
+                  </div>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-primary-dark text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-6 pt-0">
+                        <motion.div 
+                          initial={{ scale: 0.95, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 0.1, duration: 0.4 }}
+                          className="relative h-[240px] rounded-[16px] overflow-hidden mb-6 shadow-md"
+                        >
+                          <img
+                            src={service.img}
+                            alt={service.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute top-4 right-4">
+                             <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary-dark shadow-sm">
+                               {service.tag}
+                             </span>
+                          </div>
+                        </motion.div>
+                        <p className="text-[15px] text-gray-500 leading-relaxed font-medium">
+                          {service.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+          
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-3 rounded-full border border-primary-dark/10 bg-white px-8 py-4 text-[12px] font-bold uppercase tracking-[2px] text-primary-dark shadow-sm active:scale-95 transition-transform"
+            >
+              Explore All Services
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
       </div>
