@@ -28,7 +28,7 @@ const Footer = ({ onOpenInquiry }) => {
               className="h-[80px] w-auto object-contain mb-[24px] brightness-0 invert opacity-90"
             />
             <p className="text-gray-400 leading-[1.8] max-w-sm mb-[40px]">
-              An architect and trailblazer in advertising, delivering creative solutions with measurable business value.
+              An architect and trailblazer in advertising, delivering strategy-led creative solutions with measurable business value, transparent execution, and long-term partnership thinking for ambitious brands.
             </p>
           </div>
 

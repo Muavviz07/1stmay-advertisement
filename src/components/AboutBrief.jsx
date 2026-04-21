@@ -94,7 +94,7 @@ const AboutBrief = () => {
             <div className="w-[100px] h-[3px] bg-secondary mb-[40px]"></div>
 
             <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] mb-[64px] tracking-tight">
-              With decades of strategic expertise, we bridge the gap between creative vision and undeniable market dominance.
+              With decades of strategic expertise, we bridge the gap between creative ambition and market reality, building campaigns that connect brand positioning, customer psychology, and commercial goals into one focused execution system.
             </p>
 
             <Link to="/about" className="btn-primary">

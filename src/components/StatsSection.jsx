@@ -60,7 +60,7 @@ const StatsSection = () => {
              Impact that <br/> commands respect.
            </h3>
            <p className="text-[18px] text-gray-600 leading-[1.8] max-w-md font-normal">
-             With decades of proven market command, we engineer data-driven frameworks that capture global reach and deliver unprecedented conversion rates for our partners.
+             With decades of proven market command, we build data-informed campaign frameworks that expand qualified reach, strengthen brand credibility, and convert attention into consistent business outcomes for our partners.
            </p>
         </div>
 

@@ -101,7 +101,7 @@ const HeroSection = () => {
           
           <div className="block overflow-hidden">
             <p className="headline-line translate-y-[30px] opacity-0 text-[18px] md:text-[22px] text-gray-300 font-medium font-sans mb-[48px] max-w-xl border-l-[4px] border-secondary pl-[24px] leading-[1.6]">
-              Engineering high-impact advertising that commands authority and delivers incomparable market growth.
+              Engineering high-impact advertising systems that combine strategy, storytelling, and execution, so your brand earns stronger recall, faster trust, and measurable growth across every major customer touchpoint.
             </p>
           </div>
           

@@ -24,7 +24,7 @@ const AboutPage = () => {
             pagePath="/about"
             title="The People Behind"
             highlight="Your Growth Story."
-            subtitle="With 22+ years of execution, we turn business goals into clear campaigns that build trust, visibility, and measurable momentum."
+            subtitle="With 22+ years of execution experience, we translate business goals into structured campaigns that build long-term trust, strengthen brand visibility, and create measurable momentum across competitive markets."
             titleClassName="about-hero-title"
          />
 
@@ -47,10 +47,10 @@ const AboutPage = () => {
 
                      <div className="space-y-[40px] max-w-2xl">
                         <p className="text-[18px] md:text-[20px] text-gray-300 leading-[1.6] font-light">
-                           We view every campaign as an architectural milestone. Our mission is to provide unwavering transparency while delivering creative support with measurable business value.
+                           We view every campaign as an architectural milestone, where clarity in planning is as important as creative quality. Our mission is to provide unwavering transparency at every stage while delivering strategic support that produces measurable business value over time.
                         </p>
                         <p className="text-[17px] text-gray-400 leading-[1.8]">
-                           Since our inception, we have focused on one thing: positioning brands where they are not just seen, but remembered. We eliminate media wastage through rigorous research and meticulous execution.
+                           Since our inception, we have focused on one central mandate: positioning brands where they are not only seen, but consistently remembered and preferred. We reduce media wastage through rigorous market research, audience understanding, and detail-oriented execution discipline.
                         </p>
                      </div>
 
@@ -110,7 +110,7 @@ const AboutPage = () => {
          </div>
 
          <p className="text-gray-500 max-w-sm text-[18px] leading-relaxed border-l-2 border-gray-100 pl-8 text-left">
-            Advertising is both commercial and emotional. Our commercials are crafted to be sharp, short, and memorable.
+            Advertising is both commercial and emotional, and high performance comes when those two forces are intentionally balanced. Our campaigns are designed to be sharp, memorable, and adaptable across channels without losing strategic focus.
             <span className="block mt-4 text-primary font-bold">
                "Less is more, but reach is greater."
             </span>
@@ -202,13 +202,16 @@ const AboutPage = () => {
                   transition={{ duration: 0.8 }}
                   className="relative"
                >
-                  <h2 className="text-[14px] text-gray-400 tracking-[12px] uppercase font-bold mb-[48px]">The Core Mission</h2>
-                  <p className="text-3xl md:text-5xl lg:text-6xl font-display font-medium tracking-tighter leading-[1.1] text-primary-dark uppercase">
-                     Advertising <span className="text-secondary opacity-30 italic">Visibility</span>. <br />
-                     Expanding <span className="text-secondary opacity-30 italic">Market Awareness</span>. <br />
-                     Widen Your <span className="text-secondary opacity-30 italic">Reach</span>. <br />
-                     Maximize <span className="text-secondary font-bold">Sales</span>.
-                  </p>
+                     <h2 className="text-[14px] text-gray-400 tracking-[12px] uppercase font-bold mb-[48px]">The Core Mission</h2>
+                     <p className="text-3xl md:text-5xl lg:text-6xl font-display font-medium tracking-tighter leading-[1.1] text-primary-dark uppercase">
+                         Advertising <span className="text-secondary opacity-30 italic">Visibility</span>. <br />
+                         Expanding <span className="text-secondary opacity-30 italic">Market Awareness</span>. <br />
+                         Widen Your <span className="text-secondary opacity-30 italic">Reach</span>. <br />
+                         Maximize <span className="text-secondary font-bold">Sales</span>.
+                     </p>
+                     <p className="text-[17px] md:text-[19px] text-gray-500 leading-[1.8] mt-[40px] max-w-3xl mx-auto normal-case">
+                        Our role is to connect brand clarity with market behavior, so every communication touchpoint contributes to stronger recall, higher consideration, and more confident purchase decisions.
+                     </p>
                </motion.div>
             </div>
          </section>

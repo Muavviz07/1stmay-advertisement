@@ -13,7 +13,7 @@ const services = [
     id: '01',
     title: 'Advertising Films',
     label: 'Lights, camera, action',
-    desc: 'High-impact brand stories for TV, web, and social campaigns.',
+    desc: 'High-impact brand stories for TV, web, and social campaigns that drive attention quickly and hold emotional relevance through the full narrative journey.',
     img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80',
     tags: ['Film', 'Brand', 'Story']
   },
@@ -21,7 +21,7 @@ const services = [
     id: '02',
     title: 'Print Ads',
     label: 'Editorial precision',
-    desc: 'Eye-catching layouts that turn headlines into memorable brand moments.',
+    desc: 'Editorial-quality layouts that transform simple headlines into memorable brand moments and improve message retention in competitive print environments.',
     img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80',
     tags: ['Print', 'Design', 'Retail']
   },
@@ -29,7 +29,7 @@ const services = [
     id: '03',
     title: 'Corporate Films',
     label: 'Brand authority',
-    desc: 'Clear, polished video for company stories, launches, and presentations.',
+    desc: 'Clear, polished video systems for company stories, launches, and presentations that build trust with customers, partners, and internal teams.',
     img: 'https://images.unsplash.com/photo-1491972690050-ba117db4dc09?auto=format&fit=crop&w=1200&q=80',
     tags: ['Corporate', 'Story', 'Video']
   },
@@ -37,7 +37,7 @@ const services = [
     id: '04',
     title: 'Music Videos',
     label: 'Aesthetic rhythm',
-    desc: 'Rhythm-led visuals that connect performance, story, and style.',
+    desc: 'Rhythm-led visuals that merge performance, story, and style into culturally resonant media built for both audience engagement and brand distinctiveness.',
     img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
     tags: ['Music', 'Motion', 'Culture']
   },
@@ -45,7 +45,7 @@ const services = [
     id: '05',
     title: 'Media Planning',
     label: 'Strategic reach',
-    desc: 'Papers, websites, television channels — placed where your message performs best.',
+    desc: 'Integrated placement planning across papers, websites, and television channels, selected through audience behavior and performance potential.',
     img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
     tags: ['Media', 'Strategy', 'Reach']
   },
@@ -53,7 +53,7 @@ const services = [
     id: '06',
     title: 'Digital Advertising',
     label: 'Conversion engine',
-    desc: 'Campaigns designed for reach, engagement, and measurable growth.',
+    desc: 'Digital campaigns structured for qualified reach, meaningful engagement, and measurable growth across acquisition, retention, and brand preference metrics.',
     img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
     tags: ['Digital', 'Growth', 'Performance']
   },
@@ -61,7 +61,7 @@ const services = [
     id: '07',
     title: 'Radio Ads',
     label: 'Audio authority',
-    desc: 'Saleable audio scripts and spots made to sound sharp, clear, and persuasive.',
+    desc: 'Conversion-focused audio scripts and spots crafted to sound sharp, clear, and persuasive in both high-frequency radio and modern audio inventory.',
     img: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
     tags: ['Audio', 'Copy', 'Impact']
   },
@@ -69,7 +69,7 @@ const services = [
     id: '08',
     title: 'Animations',
     label: 'Motion made meaningful',
-    desc: 'State-of-the-art visuals that simplify complex ideas and amplify brand voice.',
+    desc: 'State-of-the-art motion visuals that simplify complex ideas, clarify product value, and amplify brand voice across digital-first customer journeys.',
     img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
     tags: ['Motion', 'Explainer', 'Design']
   },
@@ -77,24 +77,24 @@ const services = [
     id: '09',
     title: 'Outdoor Advertising',
     label: 'Big-format visibility',
-    desc: 'Billboards, posters, hoardings that keep your brand in view all day.',
+    desc: 'Billboards, posters, and hoardings designed for high-visibility recall, helping your brand stay top-of-mind throughout daily urban movement.',
     img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80',
     tags: ['Outdoor', 'Visibility', 'Scale']
   }
 ];
 
 const pillars = [
-  { title: 'Story-first', detail: 'We start with creative ideas, not checklist features.' },
-  { title: 'Channel-ready', detail: 'Every asset is built for its role in the campaign mix.' },
-  { title: 'Visual precision', detail: 'Design that looks polished, bold, and unmistakably modern.' },
-  { title: 'Performance aware', detail: 'Creative with real-world attention and impact in mind.' }
+  { title: 'Story-first', detail: 'We start with narrative clarity, shaping each concept around audience insight and commercial intent before execution begins.' },
+  { title: 'Channel-ready', detail: 'Every asset is designed for its specific channel role, ensuring message consistency while adapting to platform behavior and format constraints.' },
+  { title: 'Visual precision', detail: 'Design systems are refined for brand coherence, readability, and emotional impact so the work feels premium in every customer-facing context.' },
+  { title: 'Performance aware', detail: 'Creative direction is informed by outcomes, balancing bold expression with practical performance goals tied to real market metrics.' }
 ];
 
 const steps = [
-  { title: 'Discover', desc: 'We explore your market, brand voice, and audience behaviour before we ideate.' },
-  { title: 'Design', desc: 'We build ideas into polished expressions across film, print, digital, and audio.' },
-  { title: 'Deploy', desc: 'We activate campaigns with media clarity, timeliness, and creative consistency.' },
-  { title: 'Scale', desc: 'We sharpen what works and expand it into more winning touchpoints.' }
+  { title: 'Discover', desc: 'We investigate your market landscape, customer behavior, and brand voice to define sharp strategic direction before creative development starts.' },
+  { title: 'Design', desc: 'We convert strategy into polished campaign assets across film, print, digital, and audio while preserving consistency in tone and message hierarchy.' },
+  { title: 'Deploy', desc: 'We launch campaigns with channel-fit precision, timeline discipline, and quality control so execution remains coherent at every touchpoint.' },
+  { title: 'Scale', desc: 'We optimize what performs, expand successful formats, and replicate winning patterns across new channels, audiences, and market opportunities.' }
 ];
 
 const ServicesPage = () => {
@@ -177,7 +177,7 @@ const ServicesPage = () => {
         pagePath="/services"
         title="Creative Services Built"
         highlight="For Business Impact."
-        subtitle="From film to digital, every deliverable is crafted to strengthen recall, sharpen positioning, and support measurable growth."
+        subtitle="From film to digital, every deliverable is engineered to strengthen brand recall, sharpen market positioning, and support measurable growth across short-term campaigns and long-term business strategy."
         titleClassName="services-hero-title"
         subtitleClassName="services-hero-copy"
       />
@@ -194,7 +194,7 @@ const ServicesPage = () => {
                 A service suite that feels like a creative toolkit, not a checklist.
               </h2>
               <p className="max-w-xl text-[18px] leading-[1.9] text-slate-600">
-                Every offering is designed to work together — from film and radio to print, digital, and ambient experiences.
+                Every offering is designed to work as part of one integrated system - from film and radio to print, digital, and ambient experiences - so customers encounter one coherent brand narrative wherever they engage.
               </p>
             </div>
 
@@ -225,8 +225,7 @@ const ServicesPage = () => {
             
             <div className="lg:max-w-md lg:mt-16">
               <p className="text-slate-600 text-[18px] leading-relaxed mb-8">
-                From high-impact brand stories to strategic media planning, we've got you covered. 
-                Choose precision, choose 1st May for your next creative campaign.
+                From high-impact brand stories to strategic media planning, we provide end-to-end support built for business outcomes. Choose precision, choose 1st May, and move from creative ambition to commercial performance with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-8">
                 <Link to="/contact" className="text-accent-red font-bold flex items-center gap-2 group transition-all">
@@ -304,6 +303,36 @@ const ServicesPage = () => {
                 <p className="text-[15px] leading-[1.9] text-slate-600">{step.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] bg-[#F7F8FA] border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4">
+              <p className="text-[12px] text-slate-500 tracking-[6px] uppercase font-bold mb-6">
+                Delivery Philosophy
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 leading-[1.05] tracking-tight">
+                Built As A System, Not A Set Of Isolated Deliverables
+              </h2>
+            </div>
+
+            <div className="lg:col-span-8 space-y-8">
+              <p className="text-[17px] md:text-[19px] text-slate-600 leading-[1.9]">
+                Effective advertising is rarely the result of one strong asset. It is the outcome of a connected
+                system where strategy, messaging, creative format, and media behavior are intentionally aligned. We
+                therefore design every service to support the others, so campaigns feel coherent from first impression
+                to final conversion step.
+              </p>
+              <p className="text-[17px] md:text-[19px] text-slate-600 leading-[1.9]">
+                This system-led approach helps brands avoid fragmented communication, reduce wasted spend, and improve
+                audience trust over repeated interactions. Whether your focus is awareness, lead generation, market
+                expansion, or product repositioning, our service stack is structured to translate creative work into
+                measurable business movement.
+              </p>
+            </div>
           </div>
         </div>
       </section>

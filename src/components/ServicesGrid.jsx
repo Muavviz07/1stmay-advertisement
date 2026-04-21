@@ -9,11 +9,11 @@ import MobileServicesCarousel from './MobileServicesCarousel';
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { id: '01', title: "Ads That Hook in 3 Seconds", tag: "Higher Watch-Through", img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80", description: "Short-form and film campaigns engineered to stop scrolls fast and move high-intent audiences to action." },
-  { id: '02', title: "Print That Drives Store Visits", tag: "Offline Demand", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80", description: "OOH and print campaigns built to improve recall, increase footfall, and strengthen local market share." },
-  { id: '03', title: "Corporate Videos That Build Trust", tag: "Faster Decision Cycles", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80", description: "Clear brand and product narratives that help buyers understand your value faster and convert with confidence." },
-  { id: '04', title: "Performance Campaigns That Lower CAC", tag: "ROI-Focused Growth", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80", description: "Channel strategy and paid execution optimized for qualified leads, stronger ROAS, and scalable revenue." },
-  { id: '05', title: "Motion Explainers That Convert", tag: "Clarity to Conversion", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80", description: "2D and 3D explainers that simplify complex offers, reduce drop-off, and increase conversion intent." }
+  { id: '01', title: "Ads That Hook in 3 Seconds", tag: "Higher Watch-Through", img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80", description: "Short-form and film campaigns engineered to stop scrolls in the first seconds, retain audience attention through the full narrative arc, and move high-intent viewers toward clear business actions." },
+  { id: '02', title: "Print That Drives Store Visits", tag: "Offline Demand", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80", description: "OOH and print systems designed around message-location fit, improving brand recall in priority zones, increasing in-store footfall, and strengthening local market share where it matters most." },
+  { id: '03', title: "Corporate Videos That Build Trust", tag: "Faster Decision Cycles", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80", description: "Clarity-first corporate films that translate complex value propositions into confident buyer understanding, helping internal stakeholders align faster and shortening evaluation-to-decision cycles." },
+  { id: '04', title: "Performance Campaigns That Lower CAC", tag: "ROI-Focused Growth", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80", description: "Channel strategy and paid execution tuned for qualified leads, stronger conversion intent, and more efficient acquisition economics, so growth remains scalable without compromising profitability." },
+  { id: '05', title: "Motion Explainers That Convert", tag: "Clarity to Conversion", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80", description: "2D and 3D explainer assets built to simplify dense offers, reduce cognitive friction in the user journey, and increase downstream conversion rates across product, sales, and onboarding funnels." }
 ];
 
 const ServicesCreative = () => {
@@ -40,7 +40,7 @@ const ServicesCreative = () => {
           </div>
           <div className="hidden md:flex flex-col items-start md:items-end gap-5">
             <p className="text-[18px] text-gray-500 max-w-sm text-left md:text-right font-normal leading-relaxed">
-              Every service we engineer is built for one outcome: measurable growth in authority and revenue.
+              Every service we engineer is mapped to one commercial objective: building durable brand authority while creating measurable growth in leads, conversion quality, and long-term revenue momentum.
             </p>
             <Link
               to="/services"

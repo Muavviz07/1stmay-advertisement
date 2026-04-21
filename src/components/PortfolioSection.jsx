@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
 
 const portfolioItems = [
-  { id: '01', title: 'Summer Refresh', category: 'Advertising', metric: '32% Lower CPL', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', description: "A campaign refresh that improved early attention signals and reduced cost-per-lead across digital placements." },
-  { id: '02', title: 'Global Tech', category: 'Corporate', metric: '4.1x ROAS', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80', description: "Positioning and video system built to improve trust and help the sales team accelerate enterprise deal velocity." },
-  { id: '03', title: 'Urban Lifestyle', category: 'Print & OOH', metric: '27% More Footfall', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80', description: "A city-led rollout that connected message-to-location fit and drove measurable retail lift in key markets." },
-  { id: '04', title: 'Future Concepts', category: 'Animation', metric: '2.8x Demo Signups', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', description: "Explainer-led campaign flow that simplified a complex product and lifted conversion rates on landing pages." },
+  { id: '01', title: 'Summer Refresh', category: 'Advertising', metric: '32% Lower CPL', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', description: "A campaign refresh focused on message clarity, visual consistency, and sharper hooks, which improved early attention signals and reduced cost-per-lead across performance channels." },
+  { id: '02', title: 'Global Tech', category: 'Corporate', metric: '4.1x ROAS', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80', description: "A positioning and video communication system built to increase trust in complex offerings, helping the sales team accelerate enterprise deal velocity and improve conversion confidence." },
+  { id: '03', title: 'Urban Lifestyle', category: 'Print & OOH', metric: '27% More Footfall', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80', description: "A city-led rollout that aligned message-to-location behavior and creative-to-format precision, driving measurable retail footfall lift in key urban growth clusters." },
+  { id: '04', title: 'Future Concepts', category: 'Animation', metric: '2.8x Demo Signups', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', description: "An explainer-led narrative flow that translated a complex product into simple value language, reduced page friction, and lifted demo signups through stronger visitor understanding." },
 ];
 
 const PortfolioModal = ({ item, onClose }) => {
@@ -91,7 +91,7 @@ const PortfolioSection = () => {
                <h2 className="text-[14px] text-white tracking-[4px] uppercase font-bold">Where Ideas Turn Into Results</h2>
              </div>
              <p className="text-[16px] md:text-[18px] text-white/80 max-w-2xl leading-[1.7]">
-               See how strategy, storytelling, and execution come together to create high-performing campaigns.
+               See how strategy, storytelling, and execution combine to produce campaigns that not only look premium, but also deliver tangible performance gains across awareness, conversion, and revenue metrics.
              </p>
           </div>
 

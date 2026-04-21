@@ -9,27 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 const reasons = [
   {
     title: "Proven Track Record",
-    description: "Trusted by 800+ brands across India. Measurable performance metrics in every campaign.",
+    description: "Trusted by 800+ brands across India, with delivery models built around clear KPIs, transparent reporting, and campaign performance you can track from awareness to revenue impact.",
     icon: <Award className="w-[28px] h-[28px]" />
   },
   {
     title: "Creative Excellence",
-    description: "Innovative concepts that stand out. Merging high-level strategy with artistic execution.",
+    description: "Original concepts built on real audience insight, combining high-level strategy with high-craft execution so campaigns feel distinctive, memorable, and commercially relevant.",
     icon: <Zap className="w-[28px] h-[28px]" />
   },
   {
     title: "Budget Discipline",
-    description: "Quality production within agreed budgets. We believe financial discipline actively builds trust.",
+    description: "Production quality delivered within agreed financial guardrails, with proactive optimization that protects media efficiency and builds long-term trust with every engagement.",
     icon: <Wallet className="w-[28px] h-[28px]" />
   },
   {
     title: "Channel Fit",
-    description: "Cinema, print, radio, digital, outdoor. We meticulously match your message to your audience.",
+    description: "From cinema and print to radio, digital, and outdoor, we match message, format, and platform behavior to audience intent for stronger response in every channel mix.",
     icon: <Target className="w-[28px] h-[28px]" />
   },
   {
     title: "Practical Impact",
-    description: "Campaigns that align visionary ideas with execution. Generating real results that move markets.",
+    description: "Visionary ideas grounded in disciplined execution, producing practical business outcomes such as better recall, higher conversion quality, and sustained market movement.",
     icon: <CheckCircle2 className="w-[28px] h-[28px]" />
   }
 ];
@@ -68,6 +68,9 @@ const WhyChooseUs = () => {
           <h3 className="text-[40px] md:text-[64px] font-display font-extrabold text-white tracking-tight leading-[1.05] uppercase">
             WHY THE WORLD'S BEST <br className="hidden md:block" /> TRUST OUR COMMAND.
           </h3>
+          <p className="text-[17px] md:text-[19px] text-gray-400 leading-[1.8] max-w-3xl mx-auto mt-[28px]">
+            We operate as an extension of your core team, aligning brand ambition with creative systems, media intelligence, and disciplined execution to deliver outcomes that are both visible and verifiable.
+          </p>
         </div>
 
         <div className="why-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-[40px] md:gap-[32px]">

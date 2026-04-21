@@ -8,6 +8,7 @@ import TestimonialsSection from '../components/TestimonialsSection';
 import PortfolioSection from '../components/PortfolioSection';
 import StatsSection from '../components/StatsSection';
 import CTASection from '../components/CTASection';
+import StrategicNarrativeSection from '../components/StrategicNarrativeSection';
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <HeroSection />
       <PartnersRibbon />
       <ServicesGrid />
+      <StrategicNarrativeSection />
       <WhyChooseUs />
       <AboutBrief />
       <TestimonialsSection />

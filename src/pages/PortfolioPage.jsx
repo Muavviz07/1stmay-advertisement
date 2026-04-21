@@ -73,7 +73,7 @@ const PortfolioPage = () => {
         pagePath="/portfolio"
         title="Selected Work With"
         highlight="Real-World Outcomes."
-        subtitle="Explore campaigns designed for attention, crafted with precision, and executed to move brand and revenue metrics together."
+        subtitle="Explore campaigns designed to earn attention, crafted with strategic precision, and executed to move brand perception and revenue performance together over time."
         titleClassName="portfolio-hero-title"
       />
 
@@ -83,7 +83,7 @@ const PortfolioPage = () => {
           <div className="text-center mb-[60px]">
             <h2 className="text-[13px] text-gray-400 tracking-[8px] uppercase font-bold mb-[24px]">Explore Our Work</h2>
             <p className="text-[16px] text-gray-600 max-w-xl mx-auto">
-              Filter through our diverse portfolio of advertising excellence across multiple mediums.
+              Filter through our portfolio to explore how each execution style - film, print, and digital - was shaped around specific audience behavior, business goals, and measurable campaign outcomes.
             </p>
           </div>
           
@@ -189,6 +189,36 @@ const PortfolioPage = () => {
         </div>
       </section>
 
+      <section className="py-[120px] bg-[#F7F8FA] border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4">
+              <p className="text-[12px] text-gray-500 tracking-[6px] uppercase font-bold mb-6">
+                Case Method
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-primary-dark leading-[1.05] tracking-tight">
+                How We Build Performance Into Creative Work
+              </h2>
+            </div>
+
+            <div className="lg:col-span-8 space-y-8">
+              <p className="text-[17px] md:text-[19px] text-gray-600 leading-[1.9]">
+                Every project in our portfolio begins with strategic framing: business objective, audience behavior,
+                and channel reality. We then shape the creative direction around that context, ensuring visuals,
+                messaging, and production quality all serve a clear commercial purpose instead of isolated aesthetic
+                goals.
+              </p>
+              <p className="text-[17px] md:text-[19px] text-gray-600 leading-[1.9]">
+                During execution, we focus on consistency and decision discipline. This means preserving brand voice
+                across formats, maintaining timeline integrity, and measuring performance signals early so outcomes can
+                be improved while campaigns are live. The result is work that is not only memorable, but meaningfully
+                effective.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. Featured Work Highlight */}
       <section className="py-[120px] bg-primary-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -202,7 +232,7 @@ const PortfolioPage = () => {
               STANDOUT <br/> <span className="text-secondary italic">CREATIONS</span>
             </h3>
             <p className="text-[18px] text-gray-300 max-w-2xl mx-auto">
-              Our most impactful campaigns that redefined brand narratives and delivered measurable results.
+              A curated set of our most impactful campaigns, where creative ambition and strategic discipline worked together to redefine narratives and deliver measurable business results.
             </p>
           </div>
 

@@ -35,7 +35,7 @@ const CTASection = () => {
           READY TO SCALE <br/> YOUR MARKET IMPACT?
         </h3>
         <p className="text-[18px] md:text-[22px] text-gray-300 mb-[64px] max-w-2xl mx-auto leading-relaxed font-normal">
-          Partner with a veteran agency that prioritizes strategic precision and measurable growth.
+          Partner with a veteran agency that prioritizes strategic precision, creative quality, and measurable growth, so every campaign decision supports both immediate outcomes and long-term market positioning.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

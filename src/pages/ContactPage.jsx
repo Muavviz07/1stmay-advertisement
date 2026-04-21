@@ -75,6 +75,15 @@ const ContactPage = () => {
 
       {/* Contact Info Cards */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-[120px]">
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
+            Talk To Our Team Directly
+          </h2>
+          <p className="text-[17px] text-slate-600 leading-[1.8]">
+            Whether you are planning a full-scale campaign, evaluating channels, or refining an existing brand direction, our team is ready to provide clear strategic guidance with practical next steps.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactInfo.map((info, index) => (
             <motion.a
@@ -110,6 +119,15 @@ const ContactPage = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-white rounded-[48px] border border-slate-100 p-10 md:p-14 shadow-2xl relative overflow-hidden"
         >
+          <div className="mb-8">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-3">
+              Start With A Quick Brief
+            </h3>
+            <p className="text-[16px] text-slate-600 leading-[1.8]">
+              Share your requirement in a few lines and we will get back with a focused response on approach, timelines, and the most suitable campaign direction for your objective.
+            </p>
+          </div>
+
           <AnimatePresence mode="wait">
             {!isSubmitted ? (
               <motion.form
@@ -233,6 +251,52 @@ const ContactPage = () => {
           ></iframe>
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/20 to-transparent h-20 pointer-events-none" />
         </motion.div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-[120px] bg-[#F7F8FA] rounded-[36px] mt-[80px] mb-[80px]">
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-[17px] text-slate-600 leading-[1.8] max-w-3xl">
+            To make your first conversation easier, here are quick answers to the most common questions about project
+            timelines, engagement formats, and collaboration flow.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-[28px] border border-slate-200 p-8 bg-white">
+            <h3 className="text-xl font-display font-bold text-slate-900 mb-3">How soon can we start?</h3>
+            <p className="text-slate-600 leading-[1.8]">
+              Discovery can begin immediately after the first briefing call. Depending on scope, we usually move from
+              alignment to initial strategic direction within a few business days.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-200 p-8 bg-white">
+            <h3 className="text-xl font-display font-bold text-slate-900 mb-3">Do you handle end-to-end execution?</h3>
+            <p className="text-slate-600 leading-[1.8]">
+              Yes. We support strategy, creative development, production, and rollout planning, so your team gets one
+              coordinated workflow from concept to market launch.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-200 p-8 bg-white">
+            <h3 className="text-xl font-display font-bold text-slate-900 mb-3">Can we engage for one campaign first?</h3>
+            <p className="text-slate-600 leading-[1.8]">
+              Absolutely. Many partnerships begin with a focused campaign or pilot project, then expand into longer
+              engagements once performance, process, and collaboration fit are validated.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-200 p-8 bg-white">
+            <h3 className="text-xl font-display font-bold text-slate-900 mb-3">What should we prepare before reaching out?</h3>
+            <p className="text-slate-600 leading-[1.8]">
+              Share your business goal, target audience, timeline expectations, and any current marketing assets. This
+              helps us respond with sharper recommendations from the very first discussion.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   );
