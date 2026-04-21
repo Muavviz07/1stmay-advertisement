@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { submitLeadForm } from '../lib/formApi';
+import SecondaryHero from '../components/SecondaryHero';
 
 const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -62,25 +63,15 @@ const ContactPage = () => {
   ];
 
   return (
-    <main className="bg-white min-h-screen pt-[160px] pb-[120px] overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-[120px] text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="text-secondary font-bold text-lg mb-4 block uppercase tracking-widest">
-            / Inquiries
-          </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.9] tracking-tighter text-slate-900 mb-8 uppercase">
-            Connect with <br /> our Strategists
-          </h1>
-          <p className="text-slate-600 text-xl max-w-2xl mx-auto leading-relaxed">
-            Ready to elevate your brand's architecture? Reach out to us and let's start building your next landmark campaign together.
-          </p>
-        </motion.div>
-      </section>
+    <main className="bg-white min-h-screen">
+      <div className="mb-[120px]">
+        <SecondaryHero
+          pagePath="/contact"
+          title="Let's Plan Your Next"
+          highlight="Growth Campaign."
+          subtitle="Share your goals, timelines, and market context - our team will map a strategic route from idea to impact."
+        />
+      </div>
 
       {/* Contact Info Cards */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-[120px]">
@@ -185,7 +176,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="w-full bg-slate-950 text-white font-bold py-5 rounded-2xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-3"
+                  className="w-full btn-primary flex items-center justify-center gap-3"
                 >
                   {isSending ? 'Sending...' : 'Send Message'} <Send className="w-5 h-5" />
                 </button>
@@ -248,3 +239,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

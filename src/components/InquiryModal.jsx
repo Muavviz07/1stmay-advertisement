@@ -104,14 +104,14 @@ const InquiryModal = ({ isOpen, onClose }) => {
                   <span className="text-accent-red font-bold text-sm uppercase tracking-widest mb-4 block">
                     / Let's Build Something
                   </span>
-                  <h2 className="text-4xl md:text-5xl font-display font-medium text-slate-900 mb-8 tracking-tight">
+                  <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-8 tracking-tighter uppercase">
                     Start Your Project
                   </h2>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="space-y-1.5">
-                        <label className="text-[13px] font-semibold text-slate-400 ml-1">Full Name</label>
+                        <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-wider">Full Name</label>
                         <input 
                           required
                           name="name"
@@ -119,24 +119,24 @@ const InquiryModal = ({ isOpen, onClose }) => {
                           onChange={handleChange}
                           type="text" 
                           placeholder="Your Name"
-                          className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
+                          className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900 font-sans" 
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-[13px] font-semibold text-slate-400 ml-1">Your City</label>
+                        <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-wider">Your City</label>
                         <input 
                           required
                           name="city"
                           value={formData.city}
                           onChange={handleChange}
                           type="text" 
-                          placeholder="Chennai, India"
-                          className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
+                          placeholder="Mumbai, India"
+                          className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900 font-sans" 
                         />
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-[13px] font-semibold text-slate-400 ml-1">Email Address</label>
+                      <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-wider">Email Address</label>
                       <input 
                         required
                         name="email"
@@ -144,18 +144,18 @@ const InquiryModal = ({ isOpen, onClose }) => {
                         onChange={handleChange}
                         type="email" 
                         placeholder="email@example.com"
-                        className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900" 
+                        className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900 font-sans" 
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-[13px] font-semibold text-slate-400 ml-1">Tell us about your project</label>
+                      <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-wider">Project details</label>
                       <textarea 
                         required
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         rows="4" 
-                        placeholder="Project details..."
+                        placeholder="How can we help you?"
                         className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/10 transition-all outline-none text-slate-900 resize-none font-sans"
                       ></textarea>
                     </div>
@@ -165,9 +165,9 @@ const InquiryModal = ({ isOpen, onClose }) => {
                     <button 
                       type="submit" 
                       disabled={isSending}
-                      className="w-full bg-slate-950 text-white font-bold py-5 rounded-2xl hover:bg-slate-800 transition-all shadow-xl active:scale-[0.98] flex items-center justify-center gap-3 mt-4"
+                      className="w-full btn-dark !rounded-2xl"
                     >
-                      {isSending ? 'Sending...' : 'Send Inquiry'} <Send className="w-5 h-5" />
+                      {isSending ? 'Sending...' : 'Send Inquiry'}
                     </button>
                   </form>
                 </motion.div>

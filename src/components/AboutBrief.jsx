@@ -59,9 +59,9 @@ const AboutBrief = () => {
       
       {/* 1. Initial State: Elegant Intro Typography */}
       <div className="about-intro-text absolute z-10 flex flex-col items-center text-center px-6 pointer-events-none">
-        <h2 className="text-[14px] text-gray-500 tracking-[5px] uppercase font-bold mb-[24px]">Our Story</h2>
-        <h3 className="text-[6vw] leading-[0.95] font-display font-bold text-[#5D2057] tracking-tighter">
-          WE ARCHITECT <br/> REALITY.
+        <h2 className="text-[12px] text-gray-500 tracking-[6px] uppercase font-bold mb-[24px]">Market Command</h2>
+        <h3 className="text-[7vw] leading-[1.0] font-display font-extrabold text-[#0F172A] tracking-tighter uppercase">
+          ELEVATING THE <br/> STANDARD.
         </h3>
       </div>
 
@@ -83,25 +83,24 @@ const AboutBrief = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
         
         {/* Centered Premium Content */}
-        <div 
+         <div 
           ref={textContentRef}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto text-white"
         >
-           <h4 className="text-[32px] md:text-[56px] lg:text-[72px] font-display font-medium tracking-tight mb-[40px] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-             We Don't Just Create Ads. <br className="hidden md:block"/> We Build Outcomes.
-           </h4>
-           
-           <div className="w-[60px] h-[2px] bg-secondary mb-[40px]"></div>
+            <h4 className="text-[34px] md:text-[58px] lg:text-[76px] font-display font-bold tracking-tighter mb-[32px] leading-[1.05] uppercase">
+              Precision Engineering <br className="hidden md:block"/> for Market Command.
+            </h4>
+            
+            <div className="w-[100px] h-[3px] bg-secondary mb-[40px]"></div>
 
-           <p className="text-[18px] md:text-[22px] text-gray-300 max-w-2xl font-light leading-[1.6] mb-[64px]">
-             Every decision we make, from concept to execution, is focused on delivering measurable business impact.
-           </p>
+            <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] mb-[64px] tracking-tight">
+              With decades of strategic expertise, we bridge the gap between creative vision and undeniable market dominance.
+            </p>
 
-           <Link to="/about" className="group flex items-center gap-4 text-[14px] font-bold tracking-[3px] uppercase">
-              <span>Our Vision</span>
-              <div className="w-[40px] h-[2px] bg-white group-hover:w-[60px] transition-all duration-300"></div>
-           </Link>
-        </div>
+            <Link to="/about" className="btn-primary">
+               Start Project
+            </Link>
+         </div>
       </div>
 
     </section>

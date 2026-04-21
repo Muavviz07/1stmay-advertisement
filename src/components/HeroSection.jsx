@@ -90,39 +90,33 @@ const HeroSection = () => {
         
         {/* Left Side Content */}
         <div className="w-full md:w-[65%]">
-          <h1 ref={headlineRef} className="text-[36px] md:text-[58px] lg:text-[68px] xl:text-[72px] font-display font-bold text-white leading-[1.08] mb-[24px] tracking-tight drop-shadow-lg">
+          <h1 ref={headlineRef} className="text-[34px] md:text-[58px] lg:text-[68px] xl:text-[76px] font-display font-extrabold text-white leading-[1.05] mb-[28px] tracking-tighter drop-shadow-2xl uppercase">
             <span className="block overflow-hidden pb-[4px]">
-              <span className="headline-line block translate-y-[50px] opacity-0">ADVERTISING THAT</span>
+            <span className="headline-line block translate-y-[50px] opacity-0">CRAFTING</span>
             </span>
             <span className="block overflow-hidden pb-[4px]">
-              <span className="headline-line block translate-y-[50px] opacity-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#D199CF]">PAYS FOR ITSELF</span>
+              <span className="headline-line block translate-y-[50px] opacity-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#D199CF]">STRATEGIC LEGACIES</span>
             </span>
           </h1>
           
           <div className="block overflow-hidden">
-            <p className="headline-line translate-y-[30px] opacity-0 text-[16px] md:text-[20px] text-gray-300 font-medium font-sans mb-[48px] max-w-lg border-l-[3px] border-secondary pl-[20px] leading-[1.6]">
-              We design high-impact campaigns that convert attention into real business results.
+            <p className="headline-line translate-y-[30px] opacity-0 text-[18px] md:text-[22px] text-gray-300 font-medium font-sans mb-[48px] max-w-xl border-l-[4px] border-secondary pl-[24px] leading-[1.6]">
+              Engineering high-impact advertising that commands authority and delivers incomparable market growth.
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-[24px]">
+          <div className="flex flex-col sm:flex-row gap-[20px]">
             <motion.button 
               onClick={openInquiry}
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(76,175,80,0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="hero-cta opacity-0 translate-y-[20px] bg-secondary text-white px-[32px] md:px-[48px] py-[14px] md:py-[18px] rounded-[8px] font-bold text-[13px] md:text-[15px] tracking-widest uppercase border border-transparent shadow-[0_8px_24px_rgba(76,175,80,0.2)]"
+              className="hero-cta opacity-0 translate-y-[20px] btn-primary"
             >
-              Get Free Consultation
+              Get Started
             </motion.button>
             <motion.button 
               onClick={() => navigate('/portfolio')}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.5)", boxShadow: "0 0 20px rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="hero-cta opacity-0 translate-y-[20px] bg-transparent border border-white/30 text-white px-[32px] md:px-[48px] py-[14px] md:py-[18px] rounded-[8px] font-bold text-[13px] md:text-[15px] tracking-widest uppercase"
+              className="hero-cta opacity-0 translate-y-[20px] btn-outline"
             >
-              See Case Results
+              View Work
             </motion.button>
           </div>
         </div>

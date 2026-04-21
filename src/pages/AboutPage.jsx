@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CTASection from '../components/CTASection';
+import SecondaryHero from '../components/SecondaryHero';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,23 +19,14 @@ const AboutPage = () => {
    }, []);
 
    return (
-      <div className="pt-[160px] bg-bg-light">
-         {/* 1. About Page Hero */}
-         <section className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden bg-white">
-            <div className="absolute inset-0 z-0 opacity-5">
-               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
-            </div>
-
-            <div className="relative z-10 max-w-4xl">
-               <h2 className="text-[14px] text-gray-400 tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn tracking-wider">Our DNA</h2>
-               <h1 className="about-hero-title text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary-dark leading-[0.9] tracking-tighter mb-[48px]">
-                  We Don't Just Create Ads. <br /> We Build <span className="text-secondary">Outcomes.</span>
-               </h1>
-               <p className="text-[18px] md:text-[22px] text-gray-500 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
-                  Every decision we make, from concept to execution, is focused on delivering measurable business impact.
-               </p>
-            </div>
-         </section>
+      <div className="bg-bg-light">
+         <SecondaryHero
+            pagePath="/about"
+            title="The People Behind"
+            highlight="Your Growth Story."
+            subtitle="With 22+ years of execution, we turn business goals into clear campaigns that build trust, visibility, and measurable momentum."
+            titleClassName="about-hero-title"
+         />
 
          {/* 2. Philosophy & Vision: The Perspective Shift */}
          <section className="py-[120px] bg-primary-dark text-white relative overflow-hidden">

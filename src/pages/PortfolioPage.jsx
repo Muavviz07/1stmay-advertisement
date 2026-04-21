@@ -4,6 +4,7 @@ import { ArrowUpRight, Play, Eye } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CTASection from '../components/CTASection';
+import SecondaryHero from '../components/SecondaryHero';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,23 +69,13 @@ const PortfolioPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      
-      {/* 1. Hero Section */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-[160px] relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-4xl">
-          <h2 className="text-[14px] text-secondary tracking-[8px] uppercase font-bold mb-[32px] opacity-0 animate-fadeIn">Portfolio</h2>
-          <h1 className="portfolio-hero-title text-5xl md:text-7xl lg:text-7xl font-display font-bold text-white leading-[0.9] tracking-tighter mb-[48px]">
-            Where Ideas Turn <br/> Into <span className="text-secondary italic">Results</span>
-          </h1>
-          <p className="text-[18px] md:text-[22px] text-gray-300 max-w-2xl mx-auto leading-[1.6] opacity-0 animate-fadeIn delay-700">
-            See how strategy, storytelling, and execution come together to create high-performing campaigns.
-          </p>
-        </div>
-      </section>
+      <SecondaryHero
+        pagePath="/portfolio"
+        title="Selected Work With"
+        highlight="Real-World Outcomes."
+        subtitle="Explore campaigns designed for attention, crafted with precision, and executed to move brand and revenue metrics together."
+        titleClassName="portfolio-hero-title"
+      />
 
       {/* 2. Category Filter Section */}
       <section className="py-[120px] bg-white border-b border-gray-100">

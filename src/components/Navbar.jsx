@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full transition-all duration-300 flex items-center ${isOpen ? 'z-[200]' : 'z-[100]'} ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm h-[85px]' : 'bg-primary-dark/80 backdrop-blur-sm h-[110px]'}`}>
+    <nav className={`fixed top-0 left-0 w-full transition-all duration-300 flex items-center ${isOpen ? 'z-[200]' : 'z-[100]'} ${scrolled ? 'bg-[#05050A]/95 backdrop-blur-md shadow-2xl h-[85px]' : 'bg-primary-dark/80 backdrop-blur-sm h-[110px]'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex justify-between items-center">
 
         {/* Brand Logo */}
@@ -71,21 +71,21 @@ const Navbar = () => {
             src={logo}
             alt="1st May Logo"
             loading="lazy"
-            className={`transition-all duration-300 relative z-10 w-auto object-contain ${scrolled || isOpen ? 'h-[65px]' : 'h-[85px] brightness-0 invert opacity-95'}`}
+            className={`transition-all duration-300 relative z-10 w-auto object-contain ${scrolled || isOpen ? 'h-[65px] brightness-0 invert' : 'h-[85px] brightness-0 invert opacity-95'}`}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-8">
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex gap-7">
             {navLinks.map((link) => (
               <li key={link.name} className="relative group">
                 {link.isPage ? (
-                  <Link to={link.href} className={`text-[15px] font-semibold transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>
+                  <Link to={link.href} className="text-[14px] lg:text-[13px] font-bold tracking-[1.5px] transition-colors text-white hover:text-secondary font-display">
                     {link.name}
                   </Link>
                 ) : (
-                  <a href={link.href} className={`text-[15px] font-semibold transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>
+                  <a href={link.href} className="text-[14px] lg:text-[13px] font-bold tracking-[1.5px] transition-colors text-white hover:text-secondary font-display">
                     {link.name}
                   </a>
                 )}
@@ -95,7 +95,7 @@ const Navbar = () => {
           </ul>
           <button
             onClick={openInquiry}
-            className={`hover:bg-secondary-dark text-white px-6 py-2.5 rounded-[8px] text-[14px] font-bold transition-all duration-300 shadow-sm hover:shadow-card hover:-translate-y-0.5 ${scrolled ? 'bg-secondary' : 'bg-secondary'}`}
+            className="btn-primary !px-6 !py-2.5 !text-[12px]"
           >
             GET STARTED
           </button>
@@ -136,7 +136,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.href}
-                      className="text-4xl md:text-5xl font-display font-medium text-white hover:text-secondary transition-all"
+                      className="text-4xl md:text-6xl font-display font-extrabold text-white hover:text-secondary transition-all tracking-tighter"
                     >
                       {link.name}
                     </Link>

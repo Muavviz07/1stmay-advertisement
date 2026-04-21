@@ -28,7 +28,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
       },
       maxWidth: {
         '7xl': '1280px',

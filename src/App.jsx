@@ -7,7 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
-import MobileActionHub from './components/MobileActionHub';
 import InquiryModal from './components/InquiryModal';
 import { InquiryProvider, useInquiry } from './components/InquiryContext';
 
@@ -68,7 +67,6 @@ const AppContent = () => {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
-      <MobileActionHub />
       <Footer />
       <InquiryModal isOpen={isInquiryOpen} onClose={closeInquiry} />
     </div>

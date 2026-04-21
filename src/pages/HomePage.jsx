@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
+import PartnersRibbon from '../components/PartnersRibbon';
 import ServicesGrid from '../components/ServicesGrid';
 import WhyChooseUs from '../components/WhyChooseUs';
 import AboutBrief from '../components/AboutBrief';
@@ -12,6 +13,7 @@ const HomePage = () => {
   return (
     <main>
       <HeroSection />
+      <PartnersRibbon />
       <ServicesGrid />
       <WhyChooseUs />
       <AboutBrief />

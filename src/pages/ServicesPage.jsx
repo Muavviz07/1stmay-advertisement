@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CTASection from '../components/CTASection';
+import SecondaryHero from '../components/SecondaryHero';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,20 +173,14 @@ const ServicesPage = () => {
 
   return (
     <main className="bg-white text-slate-900 overflow-x-hidden">
-      <section className="relative overflow-hidden bg-white pt-[160px] pb-[120px]">
-        <div className="absolute left-0 top-0 h-[380px] w-[380px] rounded-full bg-secondary/10 blur-[120px]" />
-        <div className="absolute right-0 top-[20%] h-[320px] w-[320px] rounded-full bg-primary/10 blur-[90px]" />
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
-          <p className="text-[13px] uppercase tracking-[8px] text-secondary font-semibold mb-4">Services</p>
-          <h1 className="services-hero-title text-5xl md:text-7xl lg:text-7xl font-display tracking-tight leading-[0.9] text-slate-900 uppercase font-bold">
-            Redefining <br className="hidden md:block" /> <span className="text-secondary">Advertising</span> standards.
-          </h1>
-          <p className="services-hero-copy mx-auto mt-8 max-w-3xl text-[18px] leading-[1.9] text-slate-600">
-            We help brands move faster with work that looks premium, reads clear, and feels surprising. This is service design built for memorable campaigns and real results.
-          </p>
-        </div>
-      </section>
+      <SecondaryHero
+        pagePath="/services"
+        title="Creative Services Built"
+        highlight="For Business Impact."
+        subtitle="From film to digital, every deliverable is crafted to strengthen recall, sharpen positioning, and support measurable growth."
+        titleClassName="services-hero-title"
+        subtitleClassName="services-hero-copy"
+      />
 
       <section className="relative py-[120px] bg-slate-50 overflow-hidden">
         <div className="absolute right-0 top-0 h-[260px] w-[260px] rounded-full bg-secondary/10 blur-[90px]" />

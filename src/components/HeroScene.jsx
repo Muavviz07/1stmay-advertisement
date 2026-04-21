@@ -35,7 +35,7 @@ const HeroScene = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden hero-bg opacity-0 bg-[#05050A]">
+    <div className="absolute inset-0 z-0 overflow-hidden hero-bg opacity-0 bg-[#0A0A14]">
       {/* Background Gradient */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0B0B14] via-[#16162A] to-[#0A0A17]"></div>
       

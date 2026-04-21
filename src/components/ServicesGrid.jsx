@@ -32,22 +32,21 @@ const ServicesCreative = () => {
       <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10">
         
         <div className="services-title mb-[80px] md:mb-[120px] flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-[14px] text-gray-500 tracking-[4px] uppercase font-bold mb-[16px]">Business Outcomes</h2>
-            <h3 className="text-[48px] md:text-[64px] lg:text-[80px] font-display font-medium text-primary-dark tracking-tight leading-[1]">
-              What Your Marketing Should Deliver
+          <div className="max-w-3xl">
+            <h2 className="text-[12px] text-gray-500 tracking-[8px] uppercase font-bold mb-[16px]">Precision Services</h2>
+            <h3 className="text-[48px] md:text-[64px] lg:text-[80px] font-display font-extrabold text-primary-dark tracking-tighter leading-[1] uppercase">
+              MARKETING THAT <br className="hidden md:block" /> COMMANDS RESULTS.
             </h3>
           </div>
           <div className="hidden md:flex flex-col items-start md:items-end gap-5">
-            <p className="text-[18px] text-gray-500 max-w-sm text-left md:text-right">
-              Every service is built for one thing: measurable growth in leads, conversions, and revenue.
+            <p className="text-[18px] text-gray-500 max-w-sm text-left md:text-right font-normal leading-relaxed">
+              Every service we engineer is built for one outcome: measurable growth in authority and revenue.
             </p>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 rounded-full border border-primary-dark/20 bg-white px-6 py-3 text-[12px] font-bold uppercase tracking-[2px] text-primary-dark transition-all duration-300 hover:border-primary-dark hover:bg-primary-dark hover:text-white"
+              className="btn-dark !px-8 !py-3 !text-[12px]"
             >
               View All Services
-              <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

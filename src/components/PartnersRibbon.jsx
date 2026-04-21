@@ -1,0 +1,46 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const partners = [
+  "STRATEGIC PARTNER", "SOLUTIONS INC", "GLOBAL REACH", "INNOVATE CO", "MARKET LEAD",
+  "NEXUS BRAND", "VELOCITY MEDIA", "PRIME AGENCY", "VISIONARY CORP", "ELITE SYSTEMS"
+];
+
+const PartnersRibbon = () => {
+  return (
+    <div className="w-full bg-white border-y border-gray-100 py-10 overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+      
+      <div className="flex flex-col items-center mb-6">
+        <span className="text-[12px] text-gray-400 tracking-[3px] uppercase font-bold">Trusted by Industry Leaders</span>
+      </div>
+
+      <div className="flex whitespace-nowrap">
+        <motion.div
+           className="flex gap-16 md:gap-24 items-center"
+           animate={{
+             x: ["0%", "-50%"]
+           }}
+           transition={{
+             duration: 30,
+             ease: "linear",
+             repeat: Infinity
+           }}
+        >
+          {/* First set of logos */}
+          {partners.concat(partners).map((partner, index) => (
+            <div 
+              key={index} 
+              className="text-[18px] md:text-[24px] font-display font-bold text-gray-300 hover:text-secondary transition-colors cursor-default select-none tracking-tight"
+            >
+              {partner}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default PartnersRibbon;

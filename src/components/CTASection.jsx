@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useInquiry } from './InquiryContext';
 
 const CTASection = () => {
@@ -27,29 +28,30 @@ const CTASection = () => {
 
       <motion.div 
         style={{ y: yPos, opacity }}
-        className="max-w-[900px] w-full mx-auto px-6 relative z-20 text-center flex flex-col items-center"
+        className="relative z-10 text-center max-w-4xl mx-auto px-6"
       >
-        <span className="text-[14px] font-bold tracking-[6px] text-gray-400 uppercase mb-[32px]">
-          Lead-Generation Partner
-        </span>
-        
-        <h2 className="text-[56px] md:text-[80px] lg:text-[96px] font-display font-medium text-white mb-[40px] leading-[1.05] tracking-tight">
-          Ready to scale <br/> pipeline and sales?
-        </h2>
-        
-        <p className="text-[20px] text-gray-400 mb-[64px] max-w-2xl leading-[1.6]">
-          We turn strategy and creative into measurable demand, so your team gets more qualified leads and stronger ROI from every campaign.
+        <h2 className="text-[12px] text-secondary font-bold tracking-[6px] uppercase mb-[32px]">Direct Command</h2>
+        <h3 className="text-[40px] md:text-[64px] font-display font-extrabold text-white mb-[40px] leading-[1.05] tracking-tighter uppercase">
+          READY TO SCALE <br/> YOUR MARKET IMPACT?
+        </h3>
+        <p className="text-[18px] md:text-[22px] text-gray-300 mb-[64px] max-w-2xl mx-auto leading-relaxed font-normal">
+          Partner with a veteran agency that prioritizes strategic precision and measurable growth.
         </p>
         
-        <motion.button 
-          onClick={openInquiry}
-          whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-transparent border border-white/30 text-white px-[56px] py-[24px] rounded-full font-bold text-[16px] tracking-[2px] uppercase transition-colors duration-500 hover:border-white shadow-[0_0_40px_rgba(255,255,255,0)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center gap-4"
-        >
-          Start Your Campaign
-          <div className="w-[8px] h-[8px] rounded-full bg-secondary"></div>
-        </motion.button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <button 
+            onClick={openInquiry}
+            className="btn-primary !px-12"
+          >
+            START PROJECT
+          </button>
+          <Link 
+            to="/portfolio" 
+            className="text-white font-bold tracking-[3px] uppercase text-[12px] hover:text-secondary px-8 py-4 transition-colors"
+          >
+            VIEW CASE STUDIES
+          </Link>
+        </div>
       </motion.div>
     </section>
   );

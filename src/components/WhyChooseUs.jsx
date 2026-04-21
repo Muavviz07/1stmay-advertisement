@@ -63,10 +63,10 @@ const WhyChooseUs = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#3D1E6D] opacity-[0.05] blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10">
-        <div className="why-header text-center mb-[100px] max-w-3xl mx-auto">
-          <h2 className="text-[14px] text-gray-400 tracking-[3px] uppercase font-bold mb-[16px]">Our Promise</h2>
-          <h3 className="text-[40px] md:text-[56px] font-display font-medium text-white tracking-tight leading-[1.1]">
-            Why world-class brands choose to partner with us.
+        <div className="why-header text-center mb-[100px] max-w-4xl mx-auto">
+          <h2 className="text-[12px] text-gray-500 tracking-[6px] uppercase font-bold mb-[24px]">Strategic Advantage</h2>
+          <h3 className="text-[40px] md:text-[64px] font-display font-extrabold text-white tracking-tight leading-[1.05] uppercase">
+            WHY THE WORLD'S BEST <br className="hidden md:block" /> TRUST OUR COMMAND.
           </h3>
         </div>
 
@@ -78,14 +78,14 @@ const WhyChooseUs = () => {
               whileHover={{ y: -8 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="w-[56px] h-[56px] rounded-full bg-white/5 text-secondary flex justify-center items-center shrink-0 border border-white/10 mb-[24px] transform transition-transform duration-[0.5s] group-hover:scale-110 group-hover:bg-white/10 group-hover:border-white/20">
+              <div className="w-[64px] h-[64px] rounded-2xl bg-white/5 text-secondary flex justify-center items-center shrink-0 border border-white/10 mb-[28px] transform transition-all duration-[0.5s] group-hover:scale-110 group-hover:bg-secondary group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_0_30px_rgba(76,175,80,0.3)]">
                 {reason.icon}
               </div>
               
-              <h4 className="font-display font-semibold text-[20px] text-white mb-[12px] group-hover:text-secondary transition-colors duration-[0.5s]">
+              <h4 className="font-display font-bold text-[22px] text-white mb-[16px] group-hover:text-secondary transition-colors duration-[0.5s] uppercase tracking-tight">
                 {reason.title}
               </h4>
-              <p className="text-[15px] text-gray-400 leading-[1.7]">
+              <p className="text-[15px] text-gray-400 leading-[1.8] font-normal">
                 {reason.description}
               </p>
             </motion.div>

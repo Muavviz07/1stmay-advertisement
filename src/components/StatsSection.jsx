@@ -55,27 +55,27 @@ const StatsSection = () => {
         
         {/* Left Typography Column */}
         <div className="stat-left-text w-full lg:w-[45%]">
-           <h2 className="text-[14px] text-gray-500 tracking-[3px] uppercase font-bold mb-[24px]">At Scale</h2>
-           <h3 className="text-[48px] md:text-[64px] font-display font-medium text-primary-dark mb-[32px] leading-[1.05] tracking-tight">
-             Impact that speaks for itself.
+           <h2 className="text-[12px] text-gray-500 tracking-[6px] uppercase font-bold mb-[24px]">Strategic Scale</h2>
+           <h3 className="text-[48px] md:text-[64px] font-display font-extrabold text-primary-dark mb-[32px] leading-[1.05] tracking-tighter uppercase">
+             Impact that <br/> commands respect.
            </h3>
-           <p className="text-[18px] text-gray-600 leading-[1.7] max-w-md font-medium">
-             We don't just build localized campaigns. We engineer holistic, data-driven frameworks designed to capture global reach and unprecedented conversion rates exactly when you need them.
+           <p className="text-[18px] text-gray-600 leading-[1.8] max-w-md font-normal">
+             With decades of proven market command, we engineer data-driven frameworks that capture global reach and deliver unprecedented conversion rates for our partners.
            </p>
         </div>
 
         {/* Right Stacked Bento Stats */}
-        <div className="w-full lg:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-gray-200 rounded-[12px] overflow-hidden border border-gray-200 p-[1px] shadow-sm">
+        <div className="w-full lg:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-gray-200 rounded-[32px] overflow-hidden border border-gray-200 p-[1px] shadow-2xl">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="stat-grid-item flex flex-col justify-center p-[48px_32px] bg-white group hover:bg-[#FAF9FC] transition-colors duration-500 cursor-default"
+              className="stat-grid-item flex flex-col justify-center p-[56px_40px] bg-white group hover:bg-slate-50 transition-colors duration-500 cursor-default"
             >
-              <div className="text-[56px] font-display font-medium text-primary-dark mb-[8px] tracking-tight flex items-baseline">
+              <div className="text-[64px] font-display font-extrabold text-primary-dark mb-[8px] tracking-tighter flex items-baseline">
                 <span ref={el => countersRef.current[index] = el}>0</span>
                 <span className="text-secondary ml-1">{stat.suffix}</span>
               </div>
-              <p className="text-[13px] text-gray-400 uppercase tracking-[3px] font-bold leading-tight group-hover:text-primary transition-colors">
+              <p className="text-[12px] text-gray-400 uppercase tracking-[4px] font-bold leading-tight group-hover:text-primary transition-colors">
                 {stat.label}
               </p>
             </div>
