@@ -35,9 +35,27 @@ const HeroScene = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden hero-bg opacity-0 bg-[#0A0A14]">
+    <div className="absolute inset-0 z-0 overflow-hidden hero-bg opacity-0 bg-[#05050A]">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src="https://pppictures.media/wp-content/uploads/2025/01/Tamil-Matrimony-Tamil-15-SEC.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Contrast Overlay for text readability */}
+      <div className="absolute inset-0 z-0 bg-black/45"></div>
+
       {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0B0B14] via-[#16162A] to-[#0A0A17]"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0B0B14]/70 via-[#16162A]/55 to-[#0A0A17]/70"></div>
       
       {/* Texture Overlay */}
       <div 
@@ -134,4 +152,3 @@ const HeroScene = () => {
 };
 
 export default HeroScene;
-
