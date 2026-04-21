@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 const MobileServicesCarousel = ({ services }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const trackRef = useRef(null);
+
+  const handleScroll = () => {
+    if (!trackRef.current) return;
+    const container = trackRef.current;
+    const cardWidth = container.clientWidth * 0.85 + 24; // card width + gap
+    const index = Math.round(container.scrollLeft / cardWidth);
+    setActiveIndex(Math.max(0, Math.min(services.length - 1, index)));
+  };
+
   return (
     <div className="md:hidden w-full overflow-hidden">
-      <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-0 pb-8 no-scrollbar scroll-smooth">
+      <div
+        ref={trackRef}
+        onScroll={handleScroll}
+        className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-0 pb-8 no-scrollbar scroll-smooth"
+      >
         {services.map((service, index) => (
           <div 
             key={service.id}
@@ -40,7 +55,12 @@ const MobileServicesCarousel = ({ services }) => {
       {/* Visual Indicator */}
       <div className="flex justify-center gap-2 mt-4">
          {services.map((_, i) => (
-           <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+           <div
+             key={i}
+             className={`rounded-full transition-all duration-300 ${
+               i === activeIndex ? 'w-6 h-1.5 bg-primary-dark' : 'w-1.5 h-1.5 bg-gray-300'
+             }`}
+           ></div>
          ))}
       </div>
     </div>

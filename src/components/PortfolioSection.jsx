@@ -63,9 +63,66 @@ const PortfolioSection = () => {
   return (
     <>
       <section id="portfolio" className="relative min-h-[110vh] bg-[#F4F4F6] flex flex-col justify-center overflow-hidden">
+        <div className="md:hidden relative z-10 py-[90px] px-6">
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-secondary"></div>
+              <h2 className="text-[12px] text-primary-dark tracking-[3px] uppercase font-bold">
+                Where Ideas Turn Into Results
+              </h2>
+            </div>
+            <p className="text-[15px] text-gray-600 leading-[1.7] max-w-xl">
+              Tap through our featured work to see how creative strategy translated into measurable campaign outcomes.
+            </p>
+          </div>
+
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 no-scrollbar">
+            {portfolioItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setActiveItem(item)}
+                className="w-[86%] shrink-0 snap-center rounded-[28px] overflow-hidden bg-white border border-gray-200 text-left shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)]"
+              >
+                <div className="relative h-[260px]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute left-5 right-5 bottom-5 text-white">
+                    <p className="text-[11px] font-bold tracking-[2px] uppercase text-secondary mb-2">
+                      {item.category}
+                    </p>
+                    <h3 className="text-[28px] font-display font-semibold leading-[1.05] tracking-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-[13px] uppercase tracking-[2px] text-gray-400 font-bold mb-2">
+                    Key Result
+                  </p>
+                  <p className="text-[24px] font-display font-bold text-primary-dark mb-4">
+                    {item.metric}
+                  </p>
+                  <p className="text-[14px] text-gray-600 leading-[1.7] max-h-[74px] overflow-hidden">
+                    {item.description}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold tracking-[2px] uppercase text-primary-dark">
+                    View Case <ArrowRight className="w-4 h-4 -rotate-45" />
+                  </div>
+                </div>
+              </button>
+            ))}
+            <div className="w-2 shrink-0" />
+          </div>
+        </div>
         
         {/* Dynamic Background Image layer blending cleanly into Light Grey bounds */}
-        <div className="absolute inset-x-4 inset-y-4 md:inset-x-8 md:inset-y-8 rounded-[24px] overflow-hidden z-0">
+        <div className="hidden md:block absolute inset-x-4 inset-y-4 md:inset-x-8 md:inset-y-8 rounded-[24px] overflow-hidden z-0">
            <AnimatePresence mode="popLayout">
              <motion.img 
                key={hoveredItem.id}
@@ -83,7 +140,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Foreground Interactive Links */}
-        <div className="max-w-7xl w-full mx-auto px-6 md:px-16 relative z-10 py-[120px]">
+        <div className="hidden md:block max-w-7xl w-full mx-auto px-6 md:px-16 relative z-10 py-[120px]">
           
           <div className="mb-[80px]">
              <div className="flex items-center gap-[16px] mb-4">
