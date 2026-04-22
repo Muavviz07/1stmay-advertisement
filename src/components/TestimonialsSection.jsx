@@ -94,15 +94,15 @@ const TestimonialsSection = () => {
           <div className="flex items-center gap-[24px] md:gap-[32px] mt-[40px] md:mt-[80px]">
              <button 
                 onClick={prevTestimonial}
-                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark hover:bg-black hover:border-black hover:text-white hover:scale-105 transition-all duration-300 group"
+                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark md:hover:bg-black md:hover:border-black md:hover:text-white md:hover:scale-105 active:scale-90 active:bg-gray-100 transition-all motion-reduce:transition-none duration-300 group"
              >
-               <ChevronLeft className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" />
+               <ChevronLeft className="w-6 h-6 transform md:group-hover:-translate-x-1 transition-transform" />
              </button>
              
              <div className="flex gap-[12px] md:gap-[16px] items-center px-4">
                {testimonials.map((_, idx) => (
-                 <div key={idx} className="relative cursor-pointer py-4" onClick={() => setCurrentIndex(idx)}>
-                    <div className="w-[30px] md:w-[40px] h-[3px] bg-gray-200 overflow-hidden relative rounded-full">
+                 <div key={idx} className="relative cursor-pointer py-4 px-1" onClick={() => setCurrentIndex(idx)}>
+                    <div className="w-[30px] md:w-[40px] h-[3px] bg-gray-200 overflow-hidden relative rounded-full active:scale-95 transition-transform">
                       <motion.div 
                         initial={{ width: 0 }}
                         animate={{ width: idx === currentIndex ? '100%' : 0 }}
@@ -116,9 +116,9 @@ const TestimonialsSection = () => {
              
              <button 
                 onClick={nextTestimonial}
-                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark hover:bg-black hover:border-black hover:text-white hover:scale-105 transition-all duration-300 group"
+                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark md:hover:bg-black md:hover:border-black md:hover:text-white md:hover:scale-105 active:scale-90 active:bg-gray-100 transition-all motion-reduce:transition-none duration-300 group"
              >
-               <ChevronRight className="w-6 h-6 transform group-hover:translate-x-1 transition-transform" />
+               <ChevronRight className="w-6 h-6 transform md:group-hover:translate-x-1 transition-transform" />
              </button>
           </div>
         </div>

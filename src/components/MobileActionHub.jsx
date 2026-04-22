@@ -27,9 +27,9 @@ const MobileActionHub = () => {
             <Link 
               key={item.label} 
               to={item.path}
-              className="flex flex-col items-center gap-1 flex-1 relative group"
+              className="flex flex-col items-center gap-1 flex-1 relative group active:scale-[0.92] transition-transform duration-200"
             >
-              <div className={`p-2.5 rounded-full transition-all duration-300 ${isActive ? 'bg-secondary text-white' : 'text-gray-400 group-hover:text-white'}`}>
+              <div className={`p-2.5 rounded-full transition-all motion-reduce:transition-none duration-300 ${isActive ? 'bg-secondary text-white shadow-[0_0_15px_rgba(76,175,80,0.4)]' : 'text-gray-400 active:text-white'}`}>
                 {item.icon}
               </div>
               <span className={`text-[10px] uppercase font-bold tracking-widest ${isActive ? 'text-secondary' : 'text-gray-500'}`}>
@@ -39,7 +39,7 @@ const MobileActionHub = () => {
               {isActive && (
                 <motion.div 
                   layoutId="active-pill"
-                  className="absolute -top-1 w-1 h-1 bg-secondary rounded-full"
+                  className="absolute -top-1 w-1.5 h-1.5 bg-secondary rounded-full shadow-[0_0_10px_rgba(76,175,80,0.8)]"
                 />
               )}
             </Link>

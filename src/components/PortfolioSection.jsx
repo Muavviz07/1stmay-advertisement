@@ -116,7 +116,15 @@ const PortfolioSection = () => {
           </div>
 
           {/* Selected Item Card */}
-          <div className="rounded-[28px] overflow-hidden bg-white border border-gray-200 text-left shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            key={selectedItem.id}
+            transition={{ duration: 0.4 }}
+            whileTap={{ scale: 0.98 }}
+            className="rounded-[28px] overflow-hidden bg-white border border-gray-200 text-left shadow-[0_25px_60px_-15px_rgba(15,23,42,0.4)] cursor-pointer"
+            onClick={() => setActiveItem(selectedItem)}
+          >
             <div className="relative h-[260px]">
               <img
                 src={selectedItem.img}
@@ -124,7 +132,7 @@ const PortfolioSection = () => {
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute left-5 right-5 bottom-5 text-white">
                 <p className="text-[11px] font-bold tracking-[2px] uppercase text-secondary mb-2">
                   {selectedItem.category}
@@ -145,11 +153,11 @@ const PortfolioSection = () => {
               <p className="text-[14px] text-gray-600 leading-[1.7]">
                 {selectedItem.description}
               </p>
-              <button onClick={() => setActiveItem(selectedItem)} className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold tracking-[2px] uppercase text-primary-dark">
+              <div className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold tracking-[2px] uppercase text-primary-dark">
                 View Case <ArrowRight className="w-4 h-4 -rotate-45" />
-              </button>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         
         {/* Dynamic Background Image layer blending cleanly into Light Grey bounds */}
@@ -189,18 +197,18 @@ const PortfolioSection = () => {
                 key={item.id}
                 onMouseEnter={() => setHoveredItem(item)}
                 onClick={() => setActiveItem(item)}
-                className="group border-b border-white/20 py-[40px] md:py-[60px] cursor-pointer flex flex-col md:flex-row md:items-center justify-between transition-all duration-300"
+                className="group border-b border-white/20 py-[40px] md:py-[60px] cursor-pointer flex flex-col md:flex-row md:items-center justify-between transition-all motion-reduce:transition-none duration-300"
               >
                  <div className="flex items-center gap-[40px] md:gap-[80px]">
                     <span className="text-[20px] md:text-[24px] font-serif text-white/50 italic group-hover:text-secondary transition-colors duration-500">
                       {item.id}
                     </span>
-                    <h3 className="text-[40px] md:text-[72px] lg:text-[96px] font-display font-medium text-white tracking-tight leading-none group-hover:pl-[20px] transition-all duration-500">
+                    <h3 className="text-[40px] md:text-[72px] lg:text-[96px] font-display font-medium text-white tracking-tight leading-none group-hover:pl-[20px] transition-all motion-reduce:transition-none duration-500">
                       {item.title}
                     </h3>
                  </div>
                  
-                 <div className="mt-6 md:mt-0 opacity-0 md:group-hover:opacity-100 flex items-center gap-4 transition-all duration-500 transform md:-translate-x-8 md:group-hover:translate-x-0">
+                 <div className="mt-6 md:mt-0 opacity-0 md:group-hover:opacity-100 flex items-center gap-4 transition-all motion-reduce:transition-none duration-500 transform md:-translate-x-8 md:group-hover:translate-x-0">
                     <span className="text-white text-[18px] uppercase tracking-widest">{item.category}</span>
                     <div className="w-[64px] h-[64px] rounded-full bg-white flex items-center justify-center text-black">
                        <ArrowRight className="w-6 h-6 transform -rotate-45" />

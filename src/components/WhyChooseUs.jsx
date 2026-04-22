@@ -77,15 +77,16 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <motion.div 
               key={index}
-              className="why-card flex flex-col group cursor-default"
+              className="why-card flex flex-col group cursor-default p-6 md:p-0 rounded-2xl md:rounded-none bg-white/5 md:bg-transparent border border-white/10 md:border-transparent active:bg-white/10 transition-colors md:transition-none"
               whileHover={{ y: -8 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="w-[64px] h-[64px] rounded-2xl bg-white/5 text-secondary flex justify-center items-center shrink-0 border border-white/10 mb-[28px] transform transition-all duration-[0.5s] group-hover:scale-110 group-hover:bg-secondary group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_0_30px_rgba(76,175,80,0.3)]">
+              <div className="w-[64px] h-[64px] rounded-2xl bg-white/5 text-secondary flex justify-center items-center shrink-0 border border-white/10 mb-[28px] transform transition-all motion-reduce:transition-none duration-[0.5s] md:group-hover:scale-110 md:group-hover:bg-secondary md:group-hover:text-white md:group-hover:border-transparent md:group-hover:shadow-[0_0_30px_rgba(76,175,80,0.3)]">
                 {reason.icon}
               </div>
               
-              <h4 className="font-display font-bold text-[22px] text-white mb-[16px] group-hover:text-secondary transition-colors duration-[0.5s] uppercase tracking-tight">
+              <h4 className="font-display font-bold text-[22px] text-white mb-[16px] md:group-hover:text-secondary transition-colors duration-[0.5s] uppercase tracking-tight">
                 {reason.title}
               </h4>
               <p className="text-[15px] text-gray-400 leading-[1.8] font-normal">
