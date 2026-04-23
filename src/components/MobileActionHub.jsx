@@ -14,12 +14,12 @@ const MobileActionHub = () => {
   ];
 
   return (
-    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-[400px]">
+    <div className="md:hidden fixed bottom-0 left-0 w-full z-[90]">
       <motion.div 
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8, ease: "circOut" }}
-        className="bg-primary-dark/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex justify-between items-center"
+        className="bg-black border-t-4 border-secondary flex justify-between items-center px-4 py-4"
       >
         {actions.map((item) => {
           const isActive = pathname === item.path;
@@ -27,21 +27,14 @@ const MobileActionHub = () => {
             <Link 
               key={item.label} 
               to={item.path}
-              className="flex flex-col items-center gap-1 flex-1 relative group"
+              className="flex flex-col items-center gap-2 flex-1 relative group"
             >
-              <div className={`p-2.5 rounded-full transition-all duration-300 ${isActive ? 'bg-secondary text-white' : 'text-gray-400 group-hover:text-white'}`}>
+              <div className={`transition-all duration-300 ${isActive ? 'text-secondary' : 'text-white'}`}>
                 {item.icon}
               </div>
-              <span className={`text-[10px] uppercase font-bold tracking-widest ${isActive ? 'text-secondary' : 'text-gray-500'}`}>
+              <span className={`text-[10px] uppercase font-bold tracking-[2px] ${isActive ? 'text-secondary' : 'text-white'}`}>
                 {item.label}
               </span>
-              
-              {isActive && (
-                <motion.div 
-                  layoutId="active-pill"
-                  className="absolute -top-1 w-1 h-1 bg-secondary rounded-full"
-                />
-              )}
             </Link>
           );
         })}

@@ -128,26 +128,26 @@ const ServicesCreative = () => {
         </div>
 
         {/* Mobile Accordion Design */}
-        <div className="lg:hidden flex flex-col gap-4">
+        <div className="lg:hidden flex flex-col border-t-4 border-black">
           {services.map((service, index) => {
             const isActive = index === activeIndex;
             return (
-              <div key={service.id} className="border-b border-gray-100 overflow-hidden rounded-2xl bg-white shadow-sm">
+              <div key={service.id} className="border-b-4 border-black bg-white">
                 <div
-                  className={`cursor-pointer p-6 flex justify-between items-center transition-all duration-300 ${isActive ? 'bg-primary-light' : 'bg-white'}`}
+                  className={`cursor-pointer p-6 flex flex-col gap-4 transition-all duration-300 ${isActive ? 'bg-black text-white' : 'bg-white text-black'}`}
                   onClick={() => toggleSection(index)}
                 >
-                  <div className="flex items-center gap-5">
-                    <span className={`text-[14px] font-bold transition-colors duration-300 ${isActive ? 'text-secondary' : 'text-gray-400'}`}>
+                  <div className="flex justify-between items-start">
+                    <span className={`text-[14px] font-bold tracking-[2px] ${isActive ? 'text-secondary' : 'text-gray-500'}`}>
                       {service.id}
                     </span>
-                    <h4 className={`text-[18px] font-bold tracking-tight transition-colors duration-300 ${isActive ? 'text-primary-dark' : 'text-gray-600'}`}>
-                      {service.title}
-                    </h4>
+                    <div className={`shrink-0 w-10 h-10 border-2 flex items-center justify-center transition-all duration-500 ${isActive ? 'border-white text-white rotate-45' : 'border-black text-black'}`}>
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
                   </div>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-primary-dark text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
+                  <h4 className={`text-[28px] font-display font-black tracking-tighter leading-[1] uppercase`}>
+                    {service.title}
+                  </h4>
                 </div>
 
                 <AnimatePresence>
@@ -156,28 +156,18 @@ const ServicesCreative = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
-                      className="overflow-hidden"
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden bg-black text-white"
                     >
-                      <div className="p-6 pt-0">
-                        <motion.div 
-                          initial={{ scale: 0.95, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ delay: 0.1, duration: 0.4 }}
-                          className="relative h-[240px] rounded-[16px] overflow-hidden mb-6 shadow-md"
-                        >
+                      <div className="p-6 pt-0 border-t border-white/20">
+                        <div className="relative h-[200px] w-full mb-6 mt-6 grayscale">
                           <img
                             src={service.img}
                             alt={service.title}
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute top-4 right-4">
-                             <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary-dark shadow-sm">
-                               {service.tag}
-                             </span>
-                          </div>
-                        </motion.div>
-                        <p className="text-[15px] text-gray-500 leading-relaxed font-medium">
+                        </div>
+                        <p className="text-[16px] text-gray-300 leading-[1.4] font-medium border-l-[4px] border-secondary pl-4">
                           {service.description}
                         </p>
                       </div>
@@ -188,13 +178,12 @@ const ServicesCreative = () => {
             );
           })}
           
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center w-full">
             <Link
               to="/services"
-              className="inline-flex items-center gap-3 rounded-full border border-primary-dark/10 bg-white px-8 py-4 text-[12px] font-bold uppercase tracking-[2px] text-primary-dark shadow-sm active:scale-95 transition-transform"
+              className="w-full bg-black text-white px-8 py-5 text-[14px] font-bold uppercase tracking-[2px] text-center hover:bg-secondary transition-colors"
             >
               Explore All Services
-              <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

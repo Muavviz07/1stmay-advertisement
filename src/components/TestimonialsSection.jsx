@@ -46,42 +46,38 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="test-typography-section py-[120px] md:py-[180px] bg-white relative overflow-hidden">
+    <section className="test-typography-section py-[80px] md:py-[180px] bg-[#f4f4f4] relative overflow-hidden border-b-4 border-black">
       
-      {/* Massive Background Quotation Mark */}
-      <div className="absolute top-[5%] md:top-[10%] left-[50%] -translate-x-1/2 text-[300px] md:text-[600px] font-serif leading-none text-gray-100/50 select-none pointer-events-none z-0">
-        “
-      </div>
-
-      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col items-start md:items-center">
         
-        <div className="test-typography-container w-full flex flex-col items-center text-center">
+        <div className="test-typography-container w-full flex flex-col items-start md:items-center text-left md:text-center">
           {/* Increased minimum height specifically to prevent text/name from overlapping the bottom arrows when content wraps */}
-          <div className="w-full relative min-h-[500px] md:min-h-[450px] flex items-center justify-center mb-[40px] md:mb-0">
+          <div className="w-full relative min-h-[450px] flex items-center justify-start md:justify-center mb-[24px] md:mb-0">
             
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
-                transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
-                className="absolute inset-x-0 mx-auto max-w-5xl flex flex-col items-center"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="absolute inset-x-0 mx-auto max-w-5xl flex flex-col items-start md:items-center"
               >
-                <span className="text-[16px] md:text-[20px] text-secondary font-bold tracking-[4px] uppercase mb-[32px]">
+                <div className="md:hidden text-[120px] font-serif leading-none text-black mb-4">“</div>
+                <span className="text-[14px] md:text-[20px] text-black font-bold tracking-[4px] uppercase mb-[24px] border-l-4 border-secondary pl-4 md:border-l-0 md:pl-0">
                   {testimonials[currentIndex].heading}
                 </span>
                 
-                <h2 className="text-[32px] md:text-[56px] lg:text-[72px] font-display font-medium text-primary-dark leading-[1.1] mb-[48px] tracking-tight px-4">
+                <h2 className="text-[32px] md:text-[56px] lg:text-[72px] font-display font-black text-black leading-[1] mb-[40px] tracking-tighter uppercase pr-4 md:pr-0">
                   "{testimonials[currentIndex].quote}"
                 </h2>
                 
-                <div className="flex flex-col items-center">
-                  <div className="w-[40px] h-[2px] bg-secondary mb-[16px]"></div>
-                  <h4 className="font-display font-bold text-[18px] md:text-[20px] text-primary-dark uppercase tracking-widest">
+                <div className="flex flex-col items-start md:items-center w-full">
+                  <div className="hidden md:block w-[40px] h-[4px] bg-black mb-[16px]"></div>
+                  <h4 className="font-display font-bold text-[20px] md:text-[20px] text-black uppercase tracking-[2px]">
                     {testimonials[currentIndex].name}
                   </h4>
-                  <p className="text-[13px] md:text-[14px] text-gray-500 tracking-widest mt-[8px]">
+                  <p className="text-[14px] text-gray-600 tracking-[1px] mt-[4px] uppercase font-bold">
                     {testimonials[currentIndex].title}
                   </p>
                 </div>
@@ -91,23 +87,23 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Navigation Controls securely pushed below the relative AnimatePresence container */}
-          <div className="flex items-center gap-[24px] md:gap-[32px] mt-[40px] md:mt-[80px]">
+          <div className="flex items-center gap-[16px] md:gap-[32px] mt-[40px] md:mt-[80px] w-full md:w-auto justify-between md:justify-center">
              <button 
                 onClick={prevTestimonial}
-                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark hover:bg-black hover:border-black hover:text-white hover:scale-105 transition-all duration-300 group"
+                className="w-[64px] h-[64px] flex items-center justify-center border-2 border-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-300"
              >
-               <ChevronLeft className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" />
+               <ChevronLeft className="w-8 h-8" />
              </button>
              
-             <div className="flex gap-[12px] md:gap-[16px] items-center px-4">
+             <div className="hidden md:flex gap-[16px] items-center px-4">
                {testimonials.map((_, idx) => (
                  <div key={idx} className="relative cursor-pointer py-4" onClick={() => setCurrentIndex(idx)}>
-                    <div className="w-[30px] md:w-[40px] h-[3px] bg-gray-200 overflow-hidden relative rounded-full">
+                    <div className="w-[40px] h-[4px] bg-gray-300 overflow-hidden relative">
                       <motion.div 
                         initial={{ width: 0 }}
                         animate={{ width: idx === currentIndex ? '100%' : 0 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="absolute top-0 left-0 h-full bg-primary-dark rounded-full"
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="absolute top-0 left-0 h-full bg-black"
                       />
                     </div>
                  </div>
@@ -116,9 +112,9 @@ const TestimonialsSection = () => {
              
              <button 
                 onClick={nextTestimonial}
-                className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full flex items-center justify-center border border-gray-200 text-primary-dark hover:bg-black hover:border-black hover:text-white hover:scale-105 transition-all duration-300 group"
+                className="w-[64px] h-[64px] flex items-center justify-center border-2 border-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-300"
              >
-               <ChevronRight className="w-6 h-6 transform group-hover:translate-x-1 transition-transform" />
+               <ChevronRight className="w-8 h-8" />
              </button>
           </div>
         </div>

@@ -12,46 +12,49 @@ const AboutBrief = () => {
   const textContentRef = useRef(null);
 
   useEffect(() => {
-    // Setup a unified timeline for the entire section
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=120%", 
-        scrub: true, // 1:1 mapping to avoid "lag" or "snapping"
-        pin: true,
-        anticipatePin: 1,
-      }
-    });
+    let ctx = gsap.context(() => {
+      // Setup a unified timeline for the entire section
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=150%", // Slightly longer for more dramatic effect
+          scrub: 1, // Smoother scrub
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
 
-    // 1. Initial State: Elegant Intro Typography
-    tl.to('.about-intro-text', {
-      opacity: 0,
-      y: -100,
-      duration: 1,
-    }, 0);
-
-    // 2. Cinematic Wide Reveal (More stable than circle)
-    tl.fromTo(clipImageRef.current,
-      { clipPath: 'inset(45% 45% 45% 45%)' },
-      { 
-        clipPath: 'inset(0% 0% 0% 0%)',
-        duration: 2,
-        ease: "power2.inOut"
+      // 1. Initial State: Elegant Intro Typography
+      tl.to('.about-intro-text', {
+        opacity: 0,
+        y: -100,
+        duration: 1,
+        ease: "power2.in"
       }, 0);
 
-    tl.fromTo(innerImageRef.current,
-      { scale: 1.15 },
-      { scale: 1, duration: 2, ease: "power2.inOut" }, 0);
+      // 2. Cinematic Wide Reveal (Masking)
+      // Enabling clipPath reveal on all devices for the 'wow' factor
+      tl.fromTo(clipImageRef.current,
+        { clipPath: 'inset(45% 45% 45% 45%)' },
+        {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 2,
+          ease: "power2.inOut"
+        }, 0);
 
-    // 3. Fade in text (Centered & Sharp)
-    tl.fromTo(textContentRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1 }, 1.2);
+      // 3. Image Zoom IN (Enlarge as we scroll)
+      tl.fromTo(innerImageRef.current,
+        { scale: 1 },
+        { scale: 1.15, duration: 2, ease: "power2.inOut" }, 0);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+      // 4. Fade in content (Centered & Sharp)
+      tl.fromTo(textContentRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 }, 1.2);
+    }, containerRef);
+
+    return () => ctx.revert(); // Safer cleanup
   }, []);
 
   return (
@@ -85,19 +88,19 @@ const AboutBrief = () => {
         {/* Centered Premium Content */}
          <div 
           ref={textContentRef}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto text-white"
+          className="absolute inset-0 flex flex-col items-start md:items-center justify-end md:justify-center text-left md:text-center px-6 pb-24 md:pb-0 max-w-5xl mx-auto text-white"
         >
-            <h4 className="text-[34px] md:text-[58px] lg:text-[76px] font-display font-bold tracking-tighter mb-[32px] leading-[1.05] uppercase">
-              Precision Engineering <br className="hidden md:block"/> for Market Command.
+            <h4 className="text-[40px] md:text-[58px] lg:text-[76px] font-display font-black tracking-tighter mb-[16px] md:mb-[32px] leading-[1] md:leading-[1.05] uppercase border-l-[6px] md:border-l-0 border-secondary pl-4 md:pl-0">
+              Precision <br className="md:hidden"/> Engineering <br className="hidden md:block"/> for Market Command.
             </h4>
             
-            <div className="w-[100px] h-[3px] bg-secondary mb-[40px]"></div>
+            <div className="hidden md:block w-[80px] md:w-[100px] h-[3px] bg-secondary mb-[32px] md:mb-[40px]"></div>
 
-            <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] mb-[64px] tracking-tight">
-              With decades of strategic expertise, we bridge the gap between creative ambition and market reality, building campaigns that connect brand positioning, customer psychology, and commercial goals into one focused execution system.
+            <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-medium leading-[1.4] md:leading-[1.6] mb-[32px] md:mb-[64px] tracking-tight">
+              With decades of strategic expertise, we bridge the gap between creative ambition and market reality.
             </p>
 
-            <Link to="/about" className="btn-primary">
+            <Link to="/about" className="bg-white text-black px-8 py-4 font-bold uppercase tracking-[2px] text-[14px] hover:bg-secondary hover:text-white transition-colors duration-300 w-full md:w-auto text-center">
                Start Project
             </Link>
          </div>

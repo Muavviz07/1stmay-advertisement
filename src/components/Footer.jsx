@@ -77,7 +77,7 @@ const Footer = ({ onOpenInquiry }) => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-[40px] flex flex-col md:flex-row justify-between items-center gap-[24px]">
           <p className="text-gray-500 text-[14px]">
-            © {new Date().getFullYear()} 1st May Advertisement. All rights reserved.
+            © {new Date().getFullYear()} 1st May Advertisement. 15+ Years of Excellence. All rights reserved.
           </p>
           <div className="flex gap-[32px] text-[14px] text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
