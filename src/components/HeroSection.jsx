@@ -90,7 +90,11 @@ const HeroSection = () => {
         
         {/* Left Side Content */}
         <div className="w-full md:w-[65%]">
-          <h1 ref={headlineRef} className="text-[34px] md:text-[58px] lg:text-[68px] xl:text-[76px] font-display font-extrabold text-white leading-[1.05] mb-[28px] tracking-tighter drop-shadow-2xl uppercase">
+          <div className="headline-line translate-y-[30px] opacity-0 inline-block px-4 py-1.5 border border-white/20 bg-white/5 backdrop-blur-sm rounded-full mb-6 text-white text-[11px] md:text-[13px] font-bold tracking-widest uppercase">
+            15+ Years of Advertising Excellence
+          </div>
+
+          <h1 ref={headlineRef} className="text-[38px] md:text-[58px] lg:text-[68px] xl:text-[76px] font-display font-extrabold text-white leading-[1.05] mb-[28px] tracking-tighter drop-shadow-2xl uppercase">
             <span className="block overflow-hidden pb-[4px]">
             <span className="headline-line block translate-y-[50px] opacity-0">CRAFTING</span>
             </span>
@@ -100,8 +104,8 @@ const HeroSection = () => {
           </h1>
           
           <div className="block overflow-hidden">
-            <p className="headline-line translate-y-[30px] opacity-0 text-[18px] md:text-[22px] text-gray-300 font-medium font-sans mb-[48px] max-w-xl border-l-[4px] border-secondary pl-[24px] leading-[1.6]">
-              Engineering high-impact advertising systems that combine strategy, storytelling, and execution, so your brand earns stronger recall, faster trust, and measurable growth across every major customer touchpoint.
+            <p className="headline-line translate-y-[30px] opacity-0 text-[16px] md:text-[20px] text-gray-300 font-medium font-sans mb-[48px] max-w-xl border-l-[4px] border-secondary pl-[20px] md:pl-[24px] leading-[1.6]">
+              Engineering high-impact advertising systems that combine strategy, storytelling, and execution. We ensure your brand earns stronger recall, faster trust, and measurable growth across every major customer touchpoint.
             </p>
           </div>
           

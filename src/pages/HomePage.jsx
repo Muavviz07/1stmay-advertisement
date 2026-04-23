@@ -17,11 +17,11 @@ const HomePage = () => {
       <PartnersRibbon />
       <ServicesGrid />
       <StrategicNarrativeSection />
+      <StatsSection />
       <WhyChooseUs />
       <AboutBrief />
       <TestimonialsSection />
       <PortfolioSection />
-      <StatsSection />
       <CTASection />
     </main>
   );

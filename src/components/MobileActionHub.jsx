@@ -14,12 +14,12 @@ const MobileActionHub = () => {
   ];
 
   return (
-    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-[400px]">
+    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] w-[90%] max-w-[400px]">
       <motion.div 
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8, ease: "circOut" }}
-        className="bg-primary-dark/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex justify-between items-center"
+        className="bg-[#1A1A2E]/95 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex justify-between items-center"
       >
         {actions.map((item) => {
           const isActive = pathname === item.path;

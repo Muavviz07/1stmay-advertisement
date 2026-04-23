@@ -132,20 +132,20 @@ const ServicesCreative = () => {
           {services.map((service, index) => {
             const isActive = index === activeIndex;
             return (
-              <div key={service.id} className="border-b border-gray-100 overflow-hidden rounded-2xl bg-white shadow-sm">
+              <div key={service.id} className="border border-gray-200 overflow-hidden rounded-2xl bg-white shadow-sm">
                 <div
-                  className={`cursor-pointer p-6 flex justify-between items-center transition-all duration-300 ${isActive ? 'bg-primary-light' : 'bg-white'}`}
+                  className={`cursor-pointer p-5 md:p-6 flex justify-between items-center transition-all duration-300 ${isActive ? 'bg-gray-50' : 'bg-white'}`}
                   onClick={() => toggleSection(index)}
                 >
-                  <div className="flex items-center gap-5">
-                    <span className={`text-[14px] font-bold transition-colors duration-300 ${isActive ? 'text-secondary' : 'text-gray-400'}`}>
+                  <div className="flex items-center gap-4 md:gap-5 pr-4">
+                    <span className={`text-[13px] md:text-[14px] font-bold transition-colors duration-300 ${isActive ? 'text-secondary' : 'text-gray-400'}`}>
                       {service.id}
                     </span>
-                    <h4 className={`text-[18px] font-bold tracking-tight transition-colors duration-300 ${isActive ? 'text-primary-dark' : 'text-gray-600'}`}>
+                    <h4 className={`text-[16px] md:text-[18px] font-bold tracking-tight leading-snug transition-colors duration-300 ${isActive ? 'text-primary-dark' : 'text-gray-600'}`}>
                       {service.title}
                     </h4>
                   </div>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-primary-dark text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-primary-dark text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>

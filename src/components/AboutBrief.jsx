@@ -32,8 +32,9 @@ const AboutBrief = () => {
     }, 0);
 
     // 2. Cinematic Wide Reveal (More stable than circle)
+    const isMobile = window.innerWidth < 768;
     tl.fromTo(clipImageRef.current,
-      { clipPath: 'inset(45% 45% 45% 45%)' },
+      { clipPath: isMobile ? 'inset(35% 10% 35% 10%)' : 'inset(45% 45% 45% 45%)' },
       { 
         clipPath: 'inset(0% 0% 0% 0%)',
         duration: 2,
@@ -87,17 +88,17 @@ const AboutBrief = () => {
           ref={textContentRef}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto text-white"
         >
-            <h4 className="text-[34px] md:text-[58px] lg:text-[76px] font-display font-bold tracking-tighter mb-[32px] leading-[1.05] uppercase">
+            <h4 className="text-[28px] md:text-[58px] lg:text-[76px] font-display font-bold tracking-tighter mb-[24px] md:mb-[32px] leading-[1.1] md:leading-[1.05] uppercase">
               Precision Engineering <br className="hidden md:block"/> for Market Command.
             </h4>
             
-            <div className="w-[100px] h-[3px] bg-secondary mb-[40px]"></div>
+            <div className="w-[80px] md:w-[100px] h-[3px] bg-secondary mb-[32px] md:mb-[40px]"></div>
 
-            <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] mb-[64px] tracking-tight">
+            <p className="text-[16px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] md:leading-[1.6] mb-[48px] md:mb-[64px] tracking-tight">
               With decades of strategic expertise, we bridge the gap between creative ambition and market reality, building campaigns that connect brand positioning, customer psychology, and commercial goals into one focused execution system.
             </p>
 
-            <Link to="/about" className="btn-primary">
+            <Link to="/about" className="btn-primary !text-[12px] md:!text-[14px]">
                Start Project
             </Link>
          </div>
