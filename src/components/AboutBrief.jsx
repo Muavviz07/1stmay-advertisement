@@ -12,34 +12,29 @@ const AboutBrief = () => {
   const textContentRef = useRef(null);
 
   useEffect(() => {
-    // Setup a unified timeline for the entire section
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=120%", 
-        scrub: true, // 1:1 mapping to avoid "lag" or "snapping"
-        pin: true,
-        anticipatePin: 1,
-      }
-    });
+    let ctx = gsap.context(() => {
+      // Setup a unified timeline for the entire section
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=150%", // Slightly longer for more dramatic effect
+          scrub: 1, // Smoother scrub
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
 
-    // 1. Initial State: Elegant Intro Typography
-    tl.to('.about-intro-text', {
-      opacity: 0,
-      y: -100,
-      duration: 1,
-    }, 0);
+      // 1. Initial State: Elegant Intro Typography
+      tl.to('.about-intro-text', {
+        opacity: 0,
+        y: -100,
+        duration: 1,
+        ease: "power2.in"
+      }, 0);
 
-    // 2. Cinematic Wide Reveal (More stable than circle)
-    const isMobile = window.innerWidth < 768;
-
-    // For Swiss Style mobile: Less animation, more blocky solid reveals
-    if (isMobile) {
-      tl.fromTo(clipImageRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, 0);
-    } else {
+      // 2. Cinematic Wide Reveal (Masking)
+      // Enabling clipPath reveal on all devices for the 'wow' factor
       tl.fromTo(clipImageRef.current,
         { clipPath: 'inset(45% 45% 45% 45%)' },
         {
@@ -47,20 +42,19 @@ const AboutBrief = () => {
           duration: 2,
           ease: "power2.inOut"
         }, 0);
-    }
 
-    tl.fromTo(innerImageRef.current,
-      { scale: 1.15 },
-      { scale: 1, duration: 2, ease: "power2.inOut" }, 0);
+      // 3. Image Zoom IN (Enlarge as we scroll)
+      tl.fromTo(innerImageRef.current,
+        { scale: 1 },
+        { scale: 1.15, duration: 2, ease: "power2.inOut" }, 0);
 
-    // 3. Fade in text (Centered & Sharp)
-    tl.fromTo(textContentRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1 }, 1.2);
+      // 4. Fade in content (Centered & Sharp)
+      tl.fromTo(textContentRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 }, 1.2);
+    }, containerRef);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert(); // Safer cleanup
   }, []);
 
   return (
