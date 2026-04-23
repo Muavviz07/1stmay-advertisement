@@ -50,32 +50,32 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section className="stats-section py-[160px] bg-white relative overflow-hidden border-b border-gray-100">
-      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-[80px]">
+    <section className="stats-section py-[80px] md:py-[160px] bg-white relative overflow-hidden border-t-4 border-b-4 border-black">
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-[40px] md:gap-[80px]">
         
         {/* Left Typography Column */}
-        <div className="stat-left-text w-full lg:w-[45%]">
-           <h2 className="text-[12px] text-gray-500 tracking-[6px] uppercase font-bold mb-[24px]">Strategic Scale</h2>
-           <h3 className="text-[48px] md:text-[64px] font-display font-extrabold text-primary-dark mb-[32px] leading-[1.05] tracking-tighter uppercase">
+        <div className="stat-left-text w-full lg:w-[45%] border-l-[6px] border-secondary pl-4 md:pl-8">
+           <h2 className="text-[14px] text-black tracking-[4px] uppercase font-bold mb-[16px]">Strategic Scale</h2>
+           <h3 className="text-[42px] md:text-[64px] font-display font-black text-black mb-[24px] leading-[1] tracking-tighter uppercase">
              Impact that <br/> commands respect.
            </h3>
-           <p className="text-[18px] text-gray-600 leading-[1.8] max-w-md font-normal">
+           <p className="text-[16px] md:text-[18px] text-black leading-[1.6] max-w-md font-medium">
              With decades of proven market command, we build data-informed campaign frameworks that expand qualified reach, strengthen brand credibility, and convert attention into consistent business outcomes for our partners.
            </p>
         </div>
 
         {/* Right Stacked Bento Stats */}
-        <div className="w-full lg:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-gray-200 rounded-[32px] overflow-hidden border border-gray-200 p-[1px] shadow-2xl">
+        <div className="w-full lg:w-[50%] grid grid-cols-2 gap-4">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="stat-grid-item flex flex-col justify-center p-[56px_40px] bg-white group hover:bg-slate-50 transition-colors duration-500 cursor-default"
+              className="stat-grid-item flex flex-col justify-center p-[32px] md:p-[56px_40px] bg-white border-4 border-black"
             >
-              <div className="text-[64px] font-display font-extrabold text-primary-dark mb-[8px] tracking-tighter flex items-baseline">
+              <div className="text-[48px] md:text-[64px] font-display font-black text-black mb-[8px] tracking-tighter flex items-baseline">
                 <span ref={el => countersRef.current[index] = el}>0</span>
                 <span className="text-secondary ml-1">{stat.suffix}</span>
               </div>
-              <p className="text-[12px] text-gray-400 uppercase tracking-[4px] font-bold leading-tight group-hover:text-primary transition-colors">
+              <p className="text-[12px] md:text-[14px] text-black uppercase tracking-[2px] font-bold leading-tight">
                 {stat.label}
               </p>
             </div>

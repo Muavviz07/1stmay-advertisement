@@ -33,13 +33,21 @@ const AboutBrief = () => {
 
     // 2. Cinematic Wide Reveal (More stable than circle)
     const isMobile = window.innerWidth < 768;
-    tl.fromTo(clipImageRef.current,
-      { clipPath: isMobile ? 'inset(35% 10% 35% 10%)' : 'inset(45% 45% 45% 45%)' },
-      { 
-        clipPath: 'inset(0% 0% 0% 0%)',
-        duration: 2,
-        ease: "power2.inOut"
-      }, 0);
+
+    // For Swiss Style mobile: Less animation, more blocky solid reveals
+    if (isMobile) {
+      tl.fromTo(clipImageRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, 0);
+    } else {
+      tl.fromTo(clipImageRef.current,
+        { clipPath: 'inset(45% 45% 45% 45%)' },
+        {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 2,
+          ease: "power2.inOut"
+        }, 0);
+    }
 
     tl.fromTo(innerImageRef.current,
       { scale: 1.15 },
@@ -86,19 +94,19 @@ const AboutBrief = () => {
         {/* Centered Premium Content */}
          <div 
           ref={textContentRef}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto text-white"
+          className="absolute inset-0 flex flex-col items-start md:items-center justify-end md:justify-center text-left md:text-center px-6 pb-24 md:pb-0 max-w-5xl mx-auto text-white"
         >
-            <h4 className="text-[28px] md:text-[58px] lg:text-[76px] font-display font-bold tracking-tighter mb-[24px] md:mb-[32px] leading-[1.1] md:leading-[1.05] uppercase">
-              Precision Engineering <br className="hidden md:block"/> for Market Command.
+            <h4 className="text-[40px] md:text-[58px] lg:text-[76px] font-display font-black tracking-tighter mb-[16px] md:mb-[32px] leading-[1] md:leading-[1.05] uppercase border-l-[6px] md:border-l-0 border-secondary pl-4 md:pl-0">
+              Precision <br className="md:hidden"/> Engineering <br className="hidden md:block"/> for Market Command.
             </h4>
             
-            <div className="w-[80px] md:w-[100px] h-[3px] bg-secondary mb-[32px] md:mb-[40px]"></div>
+            <div className="hidden md:block w-[80px] md:w-[100px] h-[3px] bg-secondary mb-[32px] md:mb-[40px]"></div>
 
-            <p className="text-[16px] md:text-[24px] text-gray-200 max-w-3xl font-normal leading-[1.6] md:leading-[1.6] mb-[48px] md:mb-[64px] tracking-tight">
-              With decades of strategic expertise, we bridge the gap between creative ambition and market reality, building campaigns that connect brand positioning, customer psychology, and commercial goals into one focused execution system.
+            <p className="text-[18px] md:text-[24px] text-gray-200 max-w-3xl font-medium leading-[1.4] md:leading-[1.6] mb-[32px] md:mb-[64px] tracking-tight">
+              With decades of strategic expertise, we bridge the gap between creative ambition and market reality.
             </p>
 
-            <Link to="/about" className="btn-primary !text-[12px] md:!text-[14px]">
+            <Link to="/about" className="bg-white text-black px-8 py-4 font-bold uppercase tracking-[2px] text-[14px] hover:bg-secondary hover:text-white transition-colors duration-300 w-full md:w-auto text-center">
                Start Project
             </Link>
          </div>
