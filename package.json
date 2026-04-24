@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/fetch-videos.js",
+    "prebuild": "node scripts/fetch-videos.js",
     "dev": "vite",
     "dev:server": "node backend/server.js",
     "build": "vite build",
@@ -13,9 +15,9 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "dotenv": "^17.2.3",
     "express": "^4.21.2",
     "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
@@ -40,7 +42,10 @@
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
     "postcss": "^8.5.10",
+    "rss-parser": "^3.13.0",
     "tailwindcss": "^3.4.19",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "youtube-sr": "^4.3.12",
+    "yt-channel-info": "^3.2.1"
   }
 }

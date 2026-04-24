@@ -13,6 +13,7 @@ const Footer = ({ onOpenInquiry }) => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' }
