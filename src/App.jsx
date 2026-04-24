@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import InquiryModal from './components/InquiryModal';
 import { InquiryProvider, useInquiry } from './components/InquiryContext';
+import BackToTop from './components/BackToTop';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -68,6 +69,7 @@ const AppContent = () => {
       </Routes>
 
       <Footer />
+      <BackToTop />
       <InquiryModal isOpen={isInquiryOpen} onClose={closeInquiry} />
     </div>
   );

@@ -1,7 +1,13 @@
 import React from 'react';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+
+const YoutubeIcon = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+);
 
 const Footer = ({ onOpenInquiry }) => {
   const navLinks = [
@@ -30,6 +36,26 @@ const Footer = ({ onOpenInquiry }) => {
             <p className="text-gray-400 leading-[1.8] max-w-sm mb-[40px]">
               An architect and trailblazer in advertising, delivering strategy-led creative solutions with measurable business value, transparent execution, and long-term partnership thinking for ambitious brands.
             </p>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.youtube.com/@1stmayadvertisement755"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-secondary transition-all duration-300 transform hover:scale-110"
+                title="YouTube Channel"
+              >
+                <YoutubeIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="http://1stmayads.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-secondary transition-all duration-300 transform hover:scale-110"
+                title="Official Website"
+              >
+                <Globe className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Contact Col */}
@@ -39,7 +65,7 @@ const Footer = ({ onOpenInquiry }) => {
               <li className="flex items-start gap-[16px]">
                 <MapPin className="w-[20px] h-[20px] text-secondary shrink-0 mt-1" />
                 <span className="text-gray-400 leading-[1.6]">
-                  No.b4, 1st floor, Yamuna Appartment, <br /> Manonmaniyam street, Chitlapakkam, <br /> Chennai - 600064
+                  No.B4, 1st floor, Yamuna Appartment, <br /> Manonmaniyam street, Chitlapakkam, <br /> Chennai - 600064
                 </span>
               </li>
               <li className="flex items-center gap-[16px]">
