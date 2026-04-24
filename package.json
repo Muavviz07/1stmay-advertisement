@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/fetch-videos.js",
-    "prebuild": "node scripts/fetch-videos.js",
+    "fetch-videos": "node scripts/fetch-videos.js",
     "dev": "vite",
     "dev:server": "node backend/server.js",
     "build": "vite build",
