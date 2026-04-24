@@ -9,6 +9,7 @@ import PortfolioSection from '../components/PortfolioSection';
 import StatsSection from '../components/StatsSection';
 import CTASection from '../components/CTASection';
 import StrategicNarrativeSection from '../components/StrategicNarrativeSection';
+import VideoTeaser from '../components/VideoTeaser';
 
 const HomePage = () => {
   return (
@@ -20,7 +21,8 @@ const HomePage = () => {
       <WhyChooseUs />
       <AboutBrief />
       <TestimonialsSection />
-      <PortfolioSection />
+      <VideoTeaser />
+      {/* <PortfolioSection /> */}
       <StatsSection />
       <CTASection />
     </main>
