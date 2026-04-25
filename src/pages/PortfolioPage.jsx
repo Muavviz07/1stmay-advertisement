@@ -61,26 +61,100 @@ const VideoModal = ({ videoId, title, onClose }) => {
   );
 };
 
+// Lightbox / Image Modal
+const ImageModal = ({ src, title, onClose }) => {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-[400] flex items-center justify-center p-4 md:p-12"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 max-w-5xl w-full max-h-[85vh] flex flex-col items-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-bold tracking-[2px] uppercase group"
+        >
+          <span>Dismiss</span>
+          <div className="w-10 h-10 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-all group-hover:rotate-90">
+            <X size={18} />
+          </div>
+        </button>
+        <div className="w-full h-full overflow-hidden rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.5)]">
+          <img 
+            src={src} 
+            alt={title} 
+            className="w-full h-full object-contain bg-black/20"
+          />
+        </div>
+        <div className="mt-6 text-center">
+          <h3 className="text-white text-lg font-display tracking-wide">{title}</h3>
+          <p className="text-white/40 text-[12px] font-mono mt-1 uppercase tracking-[3px]">Print Production Portfolio</p>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
+import p01 from '../assets/portfolio/001.jpg';
+import p02 from '../assets/portfolio/002.jpg';
+import p03 from '../assets/portfolio/003.jpg';
+import p04 from '../assets/portfolio/004.jpg';
+import p05 from '../assets/portfolio/005.jpg';
+import p06 from '../assets/portfolio/006.jpg';
+
 const portfolio = [
-  { id: "01", title: "Visual Momentum", category: "Advertising Film", type: "film", client: "Aero Dynamics", format: "8K Cinema", img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80", featured: true },
-  { id: "02", title: "Editorial Precision", category: "Print Ads", type: "print", client: "Vogue Collective", format: "Medium Format", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80", featured: false },
-  { id: "03", title: "Sonic Rhythm", category: "Music Video", type: "film", client: "Studio 1st May", format: "RAW 12-bit", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80", featured: true },
-  { id: "04", title: "Market Presence", category: "Outdoor Ads", type: "print", client: "Urban Pulse", format: "Billboard Master", img: "https://images.unsplash.com/photo-1542319630-55fb7f7c944a?auto=format&fit=crop&w=1200&q=80", featured: false },
-  { id: "05", title: "Brand Monolith", category: "Advertising Film", type: "film", client: "Iconic Brands", format: "Anamorphic", img: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80", featured: true },
-  { id: "06", title: "Kinetic Flow", category: "Animation", type: "digital", client: "Synth Media", format: "3D Render", img: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1200&q=80", featured: false },
+  // Advertising Films
+  { id: "6swc05V-yrU", title: "Priya Bhavani Shankar | TVC", category: "Advertising Film", type: "video", thumbnail: "https://i.ytimg.com/vi/6swc05V-yrU/maxresdefault.jpg", featured: true },
+  { id: "oFR58wACD8E", title: "Nithya Ram | Krish Event", category: "Advertising Film", type: "video", thumbnail: "https://i.ytimg.com/vi/oFR58wACD8E/maxresdefault.jpg", featured: true },
+  { id: "cVJC4T2Em2U", title: "Aavin Yoghurt | Brand Film", category: "Advertising Film", type: "video", thumbnail: "https://i.ytimg.com/vi/cVJC4T2Em2U/maxresdefault.jpg", featured: false },
+  { id: "BfUTEM40o5Q", title: "A Square | Commercial Ads", category: "Advertising Film", type: "video", thumbnail: "https://i.ytimg.com/vi/BfUTEM40o5Q/maxresdefault.jpg", featured: false },
+
+  // Print Ads
+  { id: "p01", title: "Visual Narrative 01", category: "Print Ads", type: "print", img: p01, featured: true },
+  { id: "p02", title: "Visual Narrative 02", category: "Print Ads", type: "print", img: p02, featured: false },
+  { id: "p03", title: "Visual Narrative 03", category: "Print Ads", type: "print", img: p03, featured: false },
+  { id: "p04", title: "Visual Narrative 04", category: "Print Ads", type: "print", img: p04, featured: false },
+  { id: "p05", title: "Visual Narrative 05", category: "Print Ads", type: "print", img: p05, featured: false },
+  { id: "p06", title: "Visual Narrative 06", category: "Print Ads", type: "print", img: p06, featured: false },
 ];
 
 const PortfolioPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeVideo, setActiveVideo] = useState(null);
+  const [activeImage, setActiveImage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(6);
+  const [staticVisibleCount, setStaticVisibleCount] = useState(6);
 
   const openVideo = useCallback((project) => setActiveVideo(project), []);
   const closeVideo = useCallback(() => setActiveVideo(null), []);
 
-  const categories = ['all', 'film', 'print', 'digital'];
+  const openImage = useCallback((project) => setActiveImage(project), []);
+  const closeImage = useCallback(() => setActiveImage(null), []);
+
+  const categories = ['all', 'Advertising Film', 'Print Ads'];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -106,7 +180,7 @@ const PortfolioPage = () => {
   }, []);
 
   useEffect(() => {
-    const items = gsap.utils.toArray('.project-card');
+    const items = gsap.utils.toArray('.project-card, .portfolio-item');
     items.forEach((item) => {
       gsap.fromTo(item,
         { opacity: 0, y: 40 },
@@ -116,18 +190,24 @@ const PortfolioPage = () => {
         }
       );
     });
-  }, [visibleCount]);
+  }, [visibleCount, staticVisibleCount]);
 
-  const filteredItems = selectedCategory === 'all' ? portfolio : portfolio.filter(item => item.type === selectedCategory);
+  const filteredItems = selectedCategory === 'all' ? portfolio : portfolio.filter(item => item.category === selectedCategory);
+  const displayedStaticItems = filteredItems.slice(0, staticVisibleCount);
+  const hasMoreStatic = staticVisibleCount < filteredItems.length;
+
   const displayedVideos = projectsData.slice(0, visibleCount);
   const hasMore = visibleCount < projectsData.length;
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Video Modal */}
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {activeVideo && (
           <VideoModal videoId={activeVideo.id} title={activeVideo.title} onClose={closeVideo} />
+        )}
+        {activeImage && (
+          <ImageModal src={activeImage.img} title={activeImage.title} onClose={closeImage} />
         )}
       </AnimatePresence>
 
@@ -186,7 +266,7 @@ const PortfolioPage = () => {
                       onError={(e) => { e.target.src = `https://i.ytimg.com/vi/${project.id}/hqdefault.jpg`; }}
                     />
                     <div className="absolute inset-0 bg-primary-dark/0 group-hover:bg-primary-dark/50 transition-all duration-300 flex items-center justify-center">
-                      <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 shadow-[0_0_24px_rgba(212,175,55,0.6)]">
+                      <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 scale-100 md:scale-75 md:group-hover:scale-100 transition-all duration-300 shadow-[0_0_24px_rgba(212,175,55,0.6)]">
                         <Play size={22} fill="currentColor" className="ml-1" />
                       </div>
                     </div>
@@ -234,12 +314,12 @@ const PortfolioPage = () => {
               Filter through our portfolio to explore how each execution style — film, print, and digital — was shaped around specific audience behavior, business goals, and measurable campaign outcomes.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-[80px]">
+          <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-8 mb-[60px] md:mb-[80px] overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide no-scrollbar">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`filter-item px-8 py-4 text-[14px] font-bold tracking-[3px] uppercase transition-all duration-300 relative ${
+                className={`filter-item whitespace-nowrap px-4 md:px-8 py-3 md:py-4 text-[11px] md:text-[14px] font-bold tracking-[2px] md:tracking-[3px] uppercase transition-all duration-300 relative shrink-0 ${
                   selectedCategory === category
                     ? 'text-primary-dark bg-secondary/10'
                     : 'text-gray-400 hover:text-primary-dark hover:bg-gray-50'
@@ -262,19 +342,31 @@ const PortfolioPage = () => {
               transition={{ duration: 0.5 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {filteredItems.map((item) => (
+              {displayedStaticItems.map((item) => (
                 <motion.div
                   key={item.id}
-                  className="portfolio-item group relative overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="portfolio-item group relative overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
                   whileHover={{ y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  onClick={() => {
+                    if (item.type === 'video') openVideo(item);
+                    if (item.type === 'print') openImage(item);
+                  }}
                 >
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <img src={item.img} alt={item.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <img 
+                      src={item.type === 'video' ? item.thumbnail : item.img} 
+                      alt={item.title} 
+                      loading="lazy" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      onError={(e) => {
+                        if (item.type === 'video') e.target.src = `https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`;
+                      }}
+                    />
+                    <div className={`absolute inset-0 bg-black/60 transition-opacity duration-500 flex items-center justify-center ${item.type === 'video' ? 'opacity-100 md:opacity-0 md:group-hover:opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                       <div className="flex gap-4">
                         <button className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white hover:bg-secondary/80 transition-colors">
-                          {item.type === 'film' ? <Play size={20} /> : <Eye size={20} />}
+                          {item.type === 'video' ? <Play size={20} fill="currentColor" className="ml-1" /> : <Eye size={20} />}
                         </button>
                         <button className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
                           <ArrowUpRight size={20} />
@@ -287,11 +379,10 @@ const PortfolioPage = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[12px] text-gray-400 font-bold tracking-[3px] uppercase">{item.id}</span>
+                      <span className="text-[12px] text-gray-400 font-bold tracking-[3px] uppercase">PROJECT</span>
                       <span className="text-[10px] text-secondary font-bold tracking-[2px] uppercase">{item.category}</span>
                     </div>
                     <h3 className="text-[20px] font-display font-medium text-primary-dark mb-2 group-hover:text-secondary transition-colors">{item.title}</h3>
-                    <p className="text-[14px] text-gray-600 mb-4">{item.client} • {item.format}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-[12px] text-gray-400 uppercase tracking-[1px]">{item.type}</span>
                       <ArrowUpRight size={16} className="text-secondary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -301,6 +392,19 @@ const PortfolioPage = () => {
               ))}
             </motion.div>
           </AnimatePresence>
+
+          {/* Static Load More */}
+          {hasMoreStatic && (
+            <div className="mt-20 flex justify-center">
+              <button
+                onClick={() => setStaticVisibleCount(prev => prev + 6)}
+                className="group flex items-center gap-3 px-8 py-4 border border-gray-300 rounded-full text-sm font-bold tracking-[2px] uppercase text-primary-dark hover:border-secondary hover:bg-secondary hover:text-white transition-all duration-300"
+              >
+                Load More Projects
+                <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
