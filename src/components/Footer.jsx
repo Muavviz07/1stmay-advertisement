@@ -9,6 +9,20 @@ const YoutubeIcon = ({ className }) => (
   </svg>
 );
 
+const FacebookIcon = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/>
+  </svg>
+);
+
+const InstagramIcon = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
 const Footer = ({ onOpenInquiry }) => {
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -37,6 +51,24 @@ const Footer = ({ onOpenInquiry }) => {
               An architect and trailblazer in advertising, delivering strategy-led creative solutions with measurable business value, transparent execution, and long-term partnership thinking for ambitious brands.
             </p>
             <div className="flex items-center gap-6">
+              <a
+                href="https://www.facebook.com/1stmayad/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-secondary transition-all duration-300 transform hover:scale-110"
+                title="Facebook"
+              >
+                <FacebookIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/1st_may_ads/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-secondary transition-all duration-300 transform hover:scale-110"
+                title="Instagram"
+              >
+                <InstagramIcon className="w-5 h-5" />
+              </a>
               <a
                 href="https://www.youtube.com/@1stmayadvertisement755"
                 target="_blank"

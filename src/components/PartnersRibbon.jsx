@@ -1,40 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const partners = [
-  "STRATEGIC PARTNER", "SOLUTIONS INC", "GLOBAL REACH", "INNOVATE CO", "MARKET LEAD",
-  "NEXUS BRAND", "VELOCITY MEDIA", "PRIME AGENCY", "VISIONARY CORP", "ELITE SYSTEMS"
-];
+import c01 from '../assets/clients/01.jpg';
+import c02 from '../assets/clients/02.jpg';
+import c03 from '../assets/clients/03.jpg';
+import c04 from '../assets/clients/04.jpg';
+import c05 from '../assets/clients/05.jpg';
+import c06 from '../assets/clients/06.jpg';
+import c07 from '../assets/clients/07.jpg';
+import c08 from '../assets/clients/08.jpg';
+
+const clientLogos = [c01, c02, c03, c04, c05, c06, c07, c08];
 
 const PartnersRibbon = () => {
   return (
-    <div className="w-full bg-white border-y border-gray-100 py-10 overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+    <div className="w-full bg-white border-y border-gray-100 py-16 overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
       
-      <div className="flex flex-col items-center mb-6">
-        <span className="text-[12px] text-gray-400 tracking-[3px] uppercase font-bold">Trusted by Industry Leaders</span>
+      <div className="flex flex-col items-center mb-10">
+        <span className="text-[12px] text-gray-400 tracking-[4px] uppercase font-bold">Trusted by Industry Leaders</span>
       </div>
 
       <div className="flex whitespace-nowrap">
         <motion.div
-           className="flex gap-16 md:gap-24 items-center"
+           className="flex gap-20 md:gap-32 items-center"
            animate={{
              x: ["0%", "-50%"]
            }}
            transition={{
-             duration: 30,
+             duration: 40,
              ease: "linear",
              repeat: Infinity
            }}
         >
-          {/* First set of logos */}
-          {partners.concat(partners).map((partner, index) => (
+          {/* Double the logos for seamless infinite scroll */}
+          {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
             <div 
               key={index} 
-              className="text-[18px] md:text-[24px] font-display font-bold text-gray-300 hover:text-secondary transition-colors cursor-default select-none tracking-tight"
+              className="group flex-shrink-0"
             >
-              {partner}
+              <img 
+                src={logo} 
+                alt={`Client ${index + 1}`} 
+                className="h-10 md:h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
+              />
             </div>
           ))}
         </motion.div>
